@@ -51,6 +51,7 @@ if ( ! function_exists( 'hooniverse_setup' ) ) :
 		register_nav_menus(
 			array(
 				'menu-1' => esc_html__( 'Primary', 'hooniverse' ),
+				'menu-2' => esc_html__( 'Footer', 'hooniverse' ),
 			)
 		);
 
@@ -124,8 +125,30 @@ add_action( 'after_setup_theme', 'hooniverse_content_width', 0 );
 function hooniverse_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'hooniverse' ),
-			'id'            => 'sidebar-1',
+			'name'          => esc_html__( 'Footer Left', 'hooniverse' ),
+			'id'            => 'sidebar-footer-left',
+			'description'   => esc_html__( 'Add widgets here.', 'hooniverse' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Center', 'hooniverse' ),
+			'id'            => 'sidebar-footer-center',
+			'description'   => esc_html__( 'Add widgets here.', 'hooniverse' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Right', 'hooniverse' ),
+			'id'            => 'sidebar-footer-right',
 			'description'   => esc_html__( 'Add widgets here.', 'hooniverse' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
@@ -177,4 +200,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-

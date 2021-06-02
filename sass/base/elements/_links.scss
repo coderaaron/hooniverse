@@ -1,14 +1,22 @@
 a {
 	color: $color__link;
 
-	&:visited {
-		color: $color__link-visited;
-	}
+	nav &,
+	.site-footer & {
+		color: $color__link-nav;
+		transition-property:
+			color,
+			background-color,
+			border-color;
+		transition-duration: 0.2s;
+		transition-timing-function: linear;
+		text-decoration: none;
 
-	&:hover,
-	&:focus,
-	&:active {
-		color: $color__link-hover;
+		&:hover,
+		&:focus,
+		&:active {
+			color: $color__link-nav-hover;
+		}
 	}
 
 	&:focus {

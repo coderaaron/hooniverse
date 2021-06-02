@@ -1,0 +1,57 @@
+.site {
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-areas:
+		"header"
+		"main"
+		"footer";
+}
+
+.site-header-content,
+.site-main-content,
+.site-footer-content {
+	max-width: $size__site-width;
+	margin: 0 auto;
+}
+
+.site-header-content,
+.site-footer-content {
+	display: flex;
+	justify-content: space-between;
+}
+
+.site-header-content {
+	align-items: center;
+}
+
+.site-header {
+	grid-area: header;
+}
+
+.site-header,
+.site-footer {
+	font-size: 1.1rem;
+	background-color: #000;
+}
+
+.site-main {
+	grid-area: main;
+	overflow: hidden;
+
+	/* Resolves issue with <pre> elements forcing full width. */
+}
+
+.site-footer {
+	color: #fff;
+	grid-area: footer;
+
+	.copyright {
+		padding-top: 18px;
+		padding-bottom: 16px;
+		background-color: #282a2b;
+		border-top: 1px solid #4b4c4d;
+		text-align: center;
+		font-size: 0.8rem;
+	}
+}
+

@@ -12,19 +12,21 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'hooniverse' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'hooniverse' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'hooniverse' ), 'hooniverse', '<a href="http://coderaaron.com">CoderAaron</a>' );
-				?>
-		</div><!-- .site-info -->
+		<div class="site-footer-content">
+			<div class="footer-menu">
+				<?php dynamic_sidebar( 'sidebar-footer-left' ); ?>
+			</div><!-- .footer-menu -->
+			<div class="footer-contact">
+				<?php dynamic_sidebar( 'sidebar-footer-center' ); ?>
+			</div><!-- .footer-contatct -->
+			<div class="footer-social">
+				<?php dynamic_sidebar( 'sidebar-footer-right' ); ?>
+			</div><!-- .footer-social -->
+		</div>
+		<div class="copyright">
+			&copy; <?php echo date("Y") ?> Hooniverse <em>[Founded in 2009]</em><br/>
+			Hooniverse is a trademark of Hoonigan used with permission
+		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

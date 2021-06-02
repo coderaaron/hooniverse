@@ -1,12 +1,12 @@
 /*!
-Theme Name: Hooniverse
-Theme URI: http://underscores.me/
+Theme Name: Hooniverse 2
+Theme URI: http://hooniverse.com/
 Author: CoderAaron
 Author URI: http://coderaaron.com
 Description: HooniPress (is that a thing? Can I make that a thing?)
-Version: 1.0.0
-Tested up to: 5.4
-Requires PHP: 5.6
+Version: 2.0.0
+Tested up to: 5.7
+Requires PHP: 7.2
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: hooniverse
@@ -21,7 +21,6 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
-
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -49,19 +48,28 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Alignments
 
 --------------------------------------------------------------*/
-
+@import url(https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,400;1,600&family=Carter+One&display=swap);
+/**
+ * Type scale is using minor third modular
+ * http://www.modularscale.com/?1&em&1.2&web&text
+ */
+/**
+ * Line height
+ */
+/**
+ * Breakpoints
+ */
+/**
+ * Grid
+ */
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
-
 /* Normalize
 --------------------------------------------- */
-
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-
 /* Document
 	 ========================================================================== */
-
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -73,7 +81,6 @@ html {
 
 /* Sections
 	 ========================================================================== */
-
 /**
  * Remove the margin in all browsers.
  */
@@ -99,7 +106,6 @@ h1 {
 
 /* Grouping content
 	 ========================================================================== */
-
 /**
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
@@ -121,7 +127,6 @@ pre {
 
 /* Text-level semantics
 	 ========================================================================== */
-
 /**
  * Remove the gray background on active links in IE 10.
  */
@@ -187,7 +192,6 @@ sup {
 
 /* Embedded content
 	 ========================================================================== */
-
 /**
  * Remove the border on images inside links in IE 10.
  */
@@ -197,7 +201,6 @@ img {
 
 /* Forms
 	 ========================================================================== */
-
 /**
  * 1. Change the font styles in all browsers.
  * 2. Remove the margin in Firefox and Safari.
@@ -343,7 +346,6 @@ textarea {
 
 /* Interactive
 	 ========================================================================== */
-
 /*
  * Add the correct display in Edge, IE 10+, and Firefox.
  */
@@ -360,7 +362,6 @@ summary {
 
 /* Misc
 	 ========================================================================== */
-
 /**
  * Add the correct display in IE 10+.
  */
@@ -377,7 +378,6 @@ template {
 
 /* Box sizing
 --------------------------------------------- */
-
 /* Inherit box-sizing to more easily change it's value on a component level.
 @link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 *,
@@ -393,7 +393,6 @@ html {
 /*--------------------------------------------------------------
 # Base
 --------------------------------------------------------------*/
-
 /* Typography
 --------------------------------------------- */
 body,
@@ -403,7 +402,7 @@ select,
 optgroup,
 textarea {
 	color: #404040;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Bai Jamjuree", sans-serif;
 	font-size: 1rem;
 	line-height: 1.5;
 }
@@ -415,6 +414,7 @@ h4,
 h5,
 h6 {
 	clear: both;
+	font-family: "Carter One", cursive;
 }
 
 p {
@@ -533,25 +533,30 @@ table {
 /* Links
 --------------------------------------------- */
 a {
-	color: #4169e1;
+	color: #000;
 }
 
-a:visited {
-	color: #800080;
+nav a,
+.site-footer a {
+	color: #fff;
+	transition-property: color, background-color, border-color;
+	transition-duration: 0.2s;
+	transition-timing-function: linear;
+	text-decoration: none;
 }
 
-a:hover,
-a:focus,
-a:active {
-	color: #191970;
+nav a:hover, nav a:focus, nav a:active,
+.site-footer a:hover,
+.site-footer a:focus,
+.site-footer a:active {
+	color: #ffa500;
 }
 
 a:focus {
 	outline: thin dotted;
 }
 
-a:hover,
-a:active {
+a:hover, a:active {
 	outline: 0;
 }
 
@@ -577,8 +582,7 @@ input[type="submit"]:hover {
 	border-color: #ccc #bbb #aaa;
 }
 
-button:active,
-button:focus,
+button:active, button:focus,
 input[type="button"]:active,
 input[type="button"]:focus,
 input[type="reset"]:active,
@@ -640,16 +644,66 @@ textarea {
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
+.site {
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-areas: "header" "main" "footer";
+}
+
+.site-header-content,
+.site-main-content,
+.site-footer-content {
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+.site-header-content,
+.site-footer-content {
+	display: flex;
+	justify-content: space-between;
+}
+
+.site-header-content {
+	align-items: center;
+}
+
+.site-header {
+	grid-area: header;
+}
+
+.site-header,
+.site-footer {
+	font-size: 1.1rem;
+	background-color: #000;
+}
+
+.site-main {
+	grid-area: main;
+	overflow: hidden;
+	/* Resolves issue with <pre> elements forcing full width. */
+}
+
+.site-footer {
+	color: #fff;
+	grid-area: footer;
+}
+
+.site-footer .copyright {
+	padding-top: 18px;
+	padding-bottom: 16px;
+	background-color: #282a2b;
+	border-top: 1px solid #4b4c4d;
+	text-align: center;
+	font-size: 0.8rem;
+}
 
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
-
 /* Navigation
 --------------------------------------------- */
 .main-navigation {
-	display: block;
-	width: 100%;
+	font-family: "Carter One", cursive;
 }
 
 .main-navigation ul {
@@ -690,10 +744,10 @@ textarea {
 
 .main-navigation li {
 	position: relative;
+	margin-right: 20px;
 }
 
 .main-navigation a {
-	display: block;
 	text-decoration: none;
 }
 
@@ -704,20 +758,16 @@ textarea {
 }
 
 @media screen and (min-width: 37.5em) {
-
 	.menu-toggle {
 		display: none;
 	}
-
 	.main-navigation ul {
 		display: flex;
 	}
 }
 
-.site-main .comment-navigation,
-.site-main
-.posts-navigation,
-.site-main
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
 .post-navigation {
 	margin: 0 0 1.5em;
 }
@@ -741,6 +791,12 @@ textarea {
 	flex: 1 0 50%;
 }
 
+.footer-menu ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
 /* Posts and pages
 --------------------------------------------- */
 .sticky {
@@ -749,7 +805,7 @@ textarea {
 
 .post,
 .page {
-	margin: 0 0 1.5em;
+	/* margin: 0 0 1.5em; */
 }
 
 .updated:not(.published) {
@@ -877,10 +933,8 @@ textarea {
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/
-
 /* Jetpack infinite scroll
 --------------------------------------------- */
-
 /* Hide the Posts Navigation and the Footer when Infinite Scroll is in use. */
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer {
@@ -895,10 +949,8 @@ textarea {
 /*--------------------------------------------------------------
 # Utilities
 --------------------------------------------------------------*/
-
 /* Accessibility
 --------------------------------------------- */
-
 /* Text meant only for screen readers. */
 .screen-reader-text {
 	border: 0;
@@ -941,20 +993,16 @@ textarea {
 /* Alignments
 --------------------------------------------- */
 .alignleft {
-
 	/*rtl:ignore*/
 	float: left;
-
 	/*rtl:ignore*/
 	margin-right: 1.5em;
 	margin-bottom: 1.5em;
 }
 
 .alignright {
-
 	/*rtl:ignore*/
 	float: right;
-
 	/*rtl:ignore*/
 	margin-left: 1.5em;
 	margin-bottom: 1.5em;
@@ -967,3 +1015,5 @@ textarea {
 	margin-right: auto;
 	margin-bottom: 1.5em;
 }
+
+/*# sourceMappingURL=style.css.map */
