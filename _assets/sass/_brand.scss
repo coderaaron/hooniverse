@@ -1,3 +1,13 @@
+@import url(https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,400;1,600&family=Carter+One&display=swap);
+
+/**
+ * Hooniverse fonts
+ */
+$font-sans:  'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-serif: 'Libre Baskerville', 'Times New Roman', serif;
+$font-slab:  'Rockwell', serif;
+
+
 /**
  * Primary colors
  */
@@ -23,10 +33,3 @@ $turquoise-light: rgb(103, 200, 199); // #67C8C7
 $orange:          rgb(210,  95,  40); // #d26028
 $yellow:          rgb(255, 204,   0); // #ffcc00
 $purple:          rgb( 97,  33, 102); // #612166
-
-/**
- * WashU fonts
- */
-$font-sans:  'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$font-serif: 'Libre Baskerville', 'Times New Roman', serif;
-$font-slab:  'Rockwell', serif;
