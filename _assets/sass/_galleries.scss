@@ -1,0 +1,163 @@
+.gallery {
+	margin-bottom: 1.5em;
+	@include clearfix();
+}
+
+.gallery-item {
+	display: inline-block;
+	width: 48%;
+	width: calc(49% - .5em);
+	margin-bottom: 1.5em;
+	margin-right: 1em;
+	text-align: center;
+	vertical-align: top;
+
+	.gallery-size-thumbnail & {
+		max-width: 150px;
+	}
+
+	@media screen and (max-width: $break-xs - $rem-pixel) {
+		&:nth-child(2n) {
+			margin-right: 0;
+		}
+	}
+
+	@media screen and (min-width: $break-xs) {
+		width: auto;
+	}
+}
+
+@media screen and (min-width: $break-sm) {
+	.gallery-item {
+		display: block;
+		float: left;
+	}
+
+	.gallery-columns-2 .gallery-item {
+		width: 48%;
+		width: calc(49% - .5em);
+
+		&:nth-child(2n) {
+			margin-right: 0;
+		}
+
+		&:nth-child(2n + 1) {
+			clear: left;
+		}
+	}
+
+	.gallery-columns-3 .gallery-item {
+		width: 32%;
+		width: calc(33% - .667em);
+
+		&:nth-child(3n) {
+			margin-right: 0;
+		}
+
+		&:nth-child(3n + 1) {
+			clear: left;
+		}
+	}
+
+	.gallery-columns-4 .gallery-item {
+		width: 24%;
+		width: calc(25% - .75em);
+
+		&:nth-child(4n) {
+			margin-right: 0;
+		}
+
+		&:nth-child(4n + 1) {
+			clear: left;
+		}
+	}
+
+	.gallery-columns-5 .gallery-item {
+		width: 19%;
+		width: calc(20% - .8em);
+
+		&:nth-child(5n) {
+			margin-right: 0;
+		}
+
+		&:nth-child(5n + 1) {
+			clear: left;
+		}
+	}
+
+	.gallery-columns-6 .gallery-item {
+		width: 16%;
+		width: calc(16.6% - .8333em);
+
+		&:nth-child(6n) {
+			margin-right: 0;
+		}
+
+		&:nth-child(6n + 1) {
+			clear: left;
+		}
+	}
+
+	.gallery-columns-7 .gallery-item {
+		width: 14%;
+		width: calc(14.28% - .857em);
+
+		&:nth-child(7n) {
+			margin-right: 0;
+		}
+
+		&:nth-child(7n + 1) {
+			clear: left;
+		}
+	}
+
+	.gallery-columns-8 .gallery-item {
+		width: 12%;
+		width: calc(12.5% - .875em);
+
+		&:nth-child(8n) {
+			margin-right: 0;
+		}
+
+		&:nth-child(8n + 1) {
+			clear: left;
+		}
+	}
+
+	.gallery-columns-9 .gallery-item {
+		width: 11%;
+		width: calc(9.09% - 888em);
+
+		&:nth-child(9n) {
+			margin-right: 0;
+		}
+
+		&:nth-child(9n + 1) {
+			clear: left;
+		}
+	}
+}
+
+.gallery-icon img {
+	margin: 0 auto;
+}
+
+.gallery-caption {
+	display: block;
+	margin-top: .25em;
+	margin-bottom: .5em;
+	@include font-size($size-sm);
+	line-height: $line-height-md;
+	color: $color-text-muted;
+
+	@media screen and (min-width: $break-zoom) {
+		@include font-size($size-0);
+	}
+}
+
+.gallery-columns-6 .gallery-caption,
+.gallery-columns-7 .gallery-caption,
+.gallery-columns-8 .gallery-caption,
+.gallery-columns-9 .gallery-caption {
+	display: none;
+}

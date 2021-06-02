@@ -1,0 +1,70 @@
+.section-heading {
+	font-family: $font-serif;
+	font-weight: 400;
+	margin: 0 auto 0.5em;
+	@include font-size(1.4375);
+	text-align: center;
+
+	@media screen and (min-width: $break-zoom) {
+		@include font-size(1.5);
+	}
+
+	@media screen and (min-width: $break-md) {
+		max-width: 32em;
+		@include font-size(1.875);
+	}
+}
+
+.section-intro {
+	font-family: $font-serif;
+	margin: 0 auto 1.5em;
+	@include font-size(1);
+	text-align: center;
+
+	@media screen and (min-width: $break-sm) {
+		max-width: 53.3em;
+		@include font-size(1.125);
+	}
+}
+
+.lead,
+.is-style-lead {
+	margin-top: 0;
+	margin-bottom: 1.5em / $size-2;
+	font-family: $font-sans;
+	@include font-size($size-2);
+	font-weight: 300;
+	line-height: 1.333;
+	@media screen and (min-width: $break-zoom) {
+		max-width: $break-sm-max;
+		margin-bottom: 1.5em / $size-3;
+		@include font-size($size-3);
+	}
+}
+
+/*
+ * These callout styles have been replaced by the callout
+ * block, but need to remain in place for existing content.
+ */
+.callout,
+.is-style-callout {
+	padding: 0.8rem 1rem 0.9rem;
+	margin-bottom: 1em;
+	background: tint($turquoise-light, 80%);
+	border: 1px solid tint($turquoise, 50%);
+
+	ul,
+	ol,
+	p {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.disclaimer,
+.is-style-disclaimer {
+	@include font-size(1);
+	font-style: italic;
+	line-height: $line-height-md;
+}

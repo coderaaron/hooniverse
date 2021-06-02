@@ -1,38 +1,36 @@
 <?php
 /**
- * The template for displaying all pages
+ * The template for displaying all pages.
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package Hooniverse
+ * @package Chauvenet
  */
 
 get_header();
-?>
 
-	<main id="primary" class="site-main">
+// Feature image if there's a thumbnail and the toggle is on.
+if ( has_post_thumbnail() ) {
+	get_template_part( '_inc/templates/page-thumbnail-img' );
+} ?>
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+<div id="content" class="site-content">
+	<main id="primary" class="content-area" role="main">
 
-			get_template_part( 'template-parts/content', 'page' );
+		<?php while ( have_posts() ) : the_post(); ?>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
+			<?php get_template_part( '_inc/templates/content', 'page' ); ?>
+
+			<?php
+			// If comments are open or we have at least one comment, load up the comment template
+			if ( comments_open() || '0' != get_comments_number() ) {
 				comments_template();
-			endif;
+			} ?>
 
-		endwhile; // End of the loop.
-		?>
+		<?php endwhile; // end of the loop. ?>
 
-	</main><!-- #main -->
+	</main><!-- #primary -->
 
-<?php
-get_sidebar();
-get_footer();
+	<?php get_sidebar(); ?>
+
+</div><!-- #content -->
+
+<?php get_footer(); ?>

@@ -1,0 +1,192 @@
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+	color: $color-text;
+	font-family: $font-sans;
+	line-height: 1.45;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: $color-text-dark;
+	margin: 0 0 0.5em;
+	line-height: 1.25;
+	font-weight: 600;
+
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+h1 {
+	@include font-size(1.802);
+	margin-top: 0;
+
+	@media screen and (min-width: $break-zoom) {
+		@include font-size(2.75);
+	}
+}
+
+h2 {
+	@include font-size(1.602);
+	margin-top: 1em;
+
+	@media screen and (min-width: $break-zoom) {
+		@include font-size(2.197);
+	}
+}
+
+h3 {
+	@include font-size(1.424);
+	margin-top: 1em;
+
+	@media screen and (min-width: $break-zoom) {
+		@include font-size(1.76);
+	}
+}
+
+h4 {
+	@include font-size(1.266);
+	margin-top: 1.5em;
+
+	@media screen and (min-width: $break-zoom) {
+		@include font-size(1.4);
+	}
+}
+
+h5, h6 {
+	@include font-size(1.125);
+}
+
+h5 {
+	margin-top: 1.5em;
+}
+
+p {
+	margin-top: 0;
+	margin-bottom: 1em;
+}
+
+b, strong {
+	font-weight: 600;
+}
+
+dfn, cite, em, i {
+	font-style: italic;
+}
+
+address {
+	margin: 0 0 1.5em;
+	font-style: normal;
+}
+
+pre {
+	background: $gray-extra-light;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	@include font-size($size-0);
+	line-height: 1.6;
+	margin-bottom: 1.6em / $size-2;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em / $size-2;
+}
+
+code, kbd, tt, var {
+	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+abbr, acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark, ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+hr {
+	background-color: $gray-light;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+img {
+	width: auto;
+	max-width: 100%; /* Adhere to container width. */
+	height: auto; /* Make sure images are scaled correctly. */
+}
+
+figure {
+	margin: 0;
+}
+
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+th {
+	font-weight: bold;
+}
+
+/**
+ * Links
+ */
+
+@import "components/links";
+
+/**
+ * Accessibility
+ */
+
+/* Text meant only for screen readers */
+.screen-reader-text,
+.skip-link {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	word-wrap: normal !important;
+}
+
+.skip-link:focus {
+	background-color: #fff;
+	box-shadow: 0 0 10px -1px rgba(0, 0, 0, 0.5);
+	outline: none !important;
+	clip: auto !important;
+	color: $red;
+	display: block;
+	font-size: 1rem;
+	font-weight: 600;
+	height: auto;
+	left: 0.3em;
+	top: 0.3em;
+	line-height: normal;
+	padding: 0.9em 1.6em;
+	text-decoration: none;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar */
+}
+
+/**
+ * Alignments
+ */
+
+@import "components/media";
+@import "components/captions";
+
+/**
+ * Clearings
+ */
+
+.clearfix {
+	@include clearfix;
+}

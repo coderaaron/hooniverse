@@ -1,0 +1,167 @@
+/*
+ * These styles are shared between the editor and the front end
+ */
+
+.has-red-background-color {
+    background-color: $red;
+}
+
+.has-red-color {
+    color: $red;
+}
+
+.has-gray-background-color {
+    background-color: $gray-extra-light;
+}
+
+.has-gray-color {
+    color: $gray-extra-light;
+}
+
+.has-gray-dark-background-color {
+    background-color: $gray-dark;
+}
+
+.has-gray-dark-color {
+    color: $gray-dark;
+}
+
+.has-turquoise-background-color {
+    background-color: $turquoise;
+}
+
+.has-turquoise-color {
+    color: $turquoise;
+}
+
+.has-yellow-background-color {
+    background-color: $yellow;
+}
+
+.has-yellow-color {
+    color: $yellow;
+}
+
+.has-purple-background-color {
+    background-color: $purple;
+}
+
+.has-purple-color {
+    color: $purple;
+}
+
+.has-white-background-color {
+    background-color: #fff;
+}
+
+.has-white-color {
+    color: #fff;
+}
+
+.wp-block-separator {
+    margin-left: auto;
+    margin-right: auto;
+    clear: both;
+
+    &.is-style-short {
+        max-width: 100px;
+    }
+
+    &.is-style-full-width,
+    &.is-style-wide {
+        max-width: 100%;
+    }
+
+    // By default there is neither "short" or "full-width" classes
+    // So we have to override this silly rule built into gutenburg
+    &:not(.is-style-short):not(.is-style-dots) {
+        max-width: 100%;
+    }
+
+    &.is-style-dots {
+        border-bottom: 1px solid lighten($gray-light, 7%);
+
+        &::before {
+            content: none;
+        }
+    }
+}
+
+.wp-block-button {
+    .wp-block-button__link {
+        @extend .button-primary;
+
+        border-radius: 6px !important;
+
+        // Even if they set it to 0, we still always want a border radius!
+        &.no-border-radius {
+            border-radius: 6px !important;
+        }
+    }
+
+    .has-gray-dark-background-color {
+        @extend .button-secondary;
+    }
+}
+
+.wp-block-file {
+    .wp-block-file__button {
+        @extend .button-primary;
+    }
+
+    a.wp-block-file__button {
+        padding: 0.5em 1.25em;
+        letter-spacing: normal;
+        margin: 0 0 0 0.75em;
+
+        &:hover {
+            color: $red;
+        }
+    }
+}
+
+.wp-block-gallery {
+    margin-bottom: 1.5rem;
+}
+
+.wp-block-gallery .blocks-gallery-image figcaption,
+.wp-block-gallery .blocks-gallery-item figcaption {
+    font-size: 1rem;
+
+    a {
+        color: #fff;
+
+        &:hover,
+        &:focus {
+            color: #fff;
+        }
+    }
+}
+
+.wp-block-columns {
+	margin-bottom: 0;
+
+	.wp-block-column {
+		&:nth-child(2) {
+			&:last-child {
+				/*
+				 * We just need to flip margin and padding around to make
+				 * the default sizing nice when it's two columns going
+				 * responsive.
+				 */
+				@media screen and (max-width: $break-sm-max) {
+					margin-left: 0;
+					padding-left: 32px;
+				}
+				/*
+				 * Manually define 600px because that's what Gutenberg uses
+				 * and the closest breakpoint in Chauvenet is 656.
+				 */
+				@media screen and (max-width: 600px) {
+					margin-left: 0;
+					padding-left: 0;
+				}
+			}
+		}
+	}
+}

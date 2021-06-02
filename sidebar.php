@@ -1,17 +1,26 @@
 <?php
 /**
- * The sidebar containing the main widget area
+ * The template for displaying the sidebar.
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package Hooniverse
+ * @package Chauvenet
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-	return;
-}
-?>
+// Calculate the subnav. Function documented in template-tags.php.
+$subnav = chauvenet_get_sidebar_nav();
 
-<aside id="secondary" class="widget-area">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
-</aside><!-- #secondary -->
+if ( is_active_sidebar( 'sidebar' ) || $subnav ) { ?>
+
+<div id="secondary" class="widget-area stick" role="complementary">
+
+	<?php
+	// Print the sidebar menu if it exists.
+	if ( $subnav ) {
+		echo $subnav;
+	}
+	?>
+
+	<?php dynamic_sidebar( 'sidebar' ); ?>
+
+</div><!-- #secondary -->
+
+<?php } ?>

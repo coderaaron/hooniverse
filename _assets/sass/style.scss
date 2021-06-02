@@ -1,0 +1,55 @@
+/*!
+Theme Name: WashU Web Theme
+Theme URI: https://webtheme.wustl.edu
+Author: WashU Public Affairs and Medical Public Affairs
+Author URI: https://webtheme.wustl.edu
+Description: An official WashU theme for WordPress.
+Version: 2.0.17
+Text Domain: chauvenet
+Domain Path: /_lang/
+*/
+
+/**
+ * Variables and mixins
+ */
+@import "washu-brand";
+@import "variables";
+@import "mixins";
+
+/**
+ * Normalize
+ */
+@import "normalize";
+
+/**
+ * Component styles
+ */
+@import "global";
+@import "layout";
+@import "grid";
+@import "nav";
+@import "content";
+@import "core-blocks";
+@import "components/paragraph";
+@import "components/blockquote";
+@import "components/pullquote";
+@import "components/buttons";
+@import "components/lists";
+@import "components/tables";
+@import "components/cover";
+@import "forms";
+@import "galleries";
+@import "header";
+@import "footer";
+@import "widgets";
+@import "comments";
+
+/**
+ * Third Party Resources
+ */
+ @import "lib/frm_grids";
+
+/**
+ * Print styles
+ */
+@import "printstyles";

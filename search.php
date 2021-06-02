@@ -1,53 +1,47 @@
 <?php
 /**
- * The template for displaying search results pages
+ * The template for displaying search result pages.
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
- *
- * @package Hooniverse
+ * @package Chauvenet
  */
 
-get_header();
-?>
+get_header(); ?>
 
-	<main id="primary" class="site-main">
+<div id="content" class="site-content">
+	<main id="primary" class="content-area" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title">
-					<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'hooniverse' ), '<span>' . get_search_query() . '</span>' );
-					?>
-				</h1>
+				<?php
+				/* We're using this code instead of searchform.php because
+				   searchform.php is much too generic and is also called by
+				   the search in navigation. */
+				$searchquery = get_search_query(); ?>
+				<span class="page-title">Search Results for</span>
+				<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ) ?>">
+					<label>
+						<span class="screen-reader-text"><?php echo $searchquery; ?></span>
+						<input type="search" class="search-field" placeholder="<?php echo $searchquery; ?>" value="" name="s" title="<?php echo $searchquery; ?>">
+					</label>
+				</form>
 			</header><!-- .page-header -->
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+			<?php while ( have_posts() ) : the_post(); ?>
 
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
+				<?php get_template_part( '_inc/templates/content' ); ?>
 
-			endwhile;
+			<?php endwhile; ?>
 
-			the_posts_navigation();
+			<?php chauvenet_paging_nav(); ?>
 
-		else :
+		<?php else : ?>
 
-			get_template_part( 'template-parts/content', 'none' );
+			<?php get_template_part( '_inc/templates/content', 'none' ); ?>
 
-		endif;
-		?>
+		<?php endif; ?>
 
-	</main><!-- #main -->
+	</main><!-- #primary -->
+</div><!-- #content -->
 
-<?php
-get_sidebar();
-get_footer();
+<?php get_footer(); ?>

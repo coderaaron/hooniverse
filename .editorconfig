@@ -1,22 +1,21 @@
-# This file is for unifying the coding style for different editors and IDEs
+# EditorConfig helps developers define and maintain consistent
+# coding styles between different editors and IDEs
 # editorconfig.org
-
-# WordPress Coding Standards
-# https://make.wordpress.org/core/handbook/coding-standards/
 
 root = true
 
+
 [*]
-charset = utf-8
-end_of_line = lf
-insert_final_newline = true
-trim_trailing_whitespace = true
+
+# Change these settings to your own preference
+# when indent_style is set to "tab", it may be desirable to leave indent_size unspecified so readers may view the file using their preferred indentation format.
 indent_style = tab
-indent_size = 4
 
-[{.jshintrc,*.json,*.yml}]
-indent_style = space
-indent_size = 2
+# We recommend you to keep these unchanged
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
 
-[{*.txt,wp-config-sample.php}]
-end_of_line = crlf
+[*.md]
+trim_trailing_whitespace = false

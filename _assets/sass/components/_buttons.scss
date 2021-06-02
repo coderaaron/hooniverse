@@ -1,0 +1,106 @@
+.button-primary,
+.is-style-default .wp-block-button__link {
+	display: inline-block;
+	cursor: pointer;
+	font-family: $font-sans;
+	color: #fff;
+	@include font-size( $size-0 );
+	font-weight: 400;
+	line-height: 1.1em;
+	text-decoration: none;
+	padding: 0.5em 1.25em;
+	margin: 0 0 1em;
+	border: 1px solid $red;
+	border-radius: 6px;
+	background-color: $red;
+	text-align: center;
+
+	&:hover {
+		background-color: #fff;
+		border: 1px solid $red;
+		color: $red;
+		text-decoration: none;
+	}
+
+	&:focus {
+		color: #fff;
+		text-decoration: none;
+
+		&:hover {
+			color: $red;
+		}
+	}
+
+	&:nth-last-child(1n + 2) {
+		margin-right: 1.5em;
+	}
+
+	// For centered layouts. Nested for inheritance.
+	.button-group &,
+	[style*="text-align: center"] & {
+		margin-right: .5em;
+		margin-left: .5em;
+	}
+}
+
+.button-group {
+	text-align: center;
+}
+
+.button-inverse {
+	@extend .button-primary;
+	background-color: transparent;
+	border: 1px solid #fff;
+	color: #fff;
+
+	&:hover {
+		border-color: #fff;
+		color: $color-text-dark;
+	}
+}
+
+.button-secondary,
+.button-outline,
+.wp-block-button.is-style-outline .wp-block-button__link {
+	@extend .button-primary;
+	background-color: transparent;
+	border: 1px solid $red;
+	color: $red;
+
+	&:focus {
+		color: $red;
+	}
+
+	&:hover,
+	&:hover:focus,
+	&:active {
+		background: $red;
+		color: #fff;
+	}
+}
+
+.button-text {
+	display: inline-block;
+	cursor: pointer;
+	font-family: $font-sans;
+	color: $red;
+	@include font-size( $size-0 );
+	font-weight: 400;
+	line-height: 1.1em;
+	text-decoration: none;
+	padding: 0.5em 1.25em;
+	margin: 0 0 1em;
+	border: none;
+	background: none;
+
+	&:focus,
+	&:hover {
+		text-decoration: underline;
+	}
+
+	.button-group &,
+	[style*="text-align: center"] & {
+		margin-right: .5em;
+		margin-left: .5em;
+	}
+}

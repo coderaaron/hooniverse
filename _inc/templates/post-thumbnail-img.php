@@ -1,0 +1,14 @@
+<?php
+	$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
+?>
+
+<?php if ( $image[1] >= 750 ) { ?>
+<figure class="post-thumbnail-feature">
+	<?php the_post_thumbnail( 'large' ); ?>
+	<?php if ( $caption = get_the_post_thumbnail_caption() ) { ?>
+		<figcaption class="wp-caption-text">
+			<?php echo $caption; // no need to esc_html(), already treated in the fuction ?>
+		</figcaption>
+	<?php } ?>
+</figure>
+<?php } ?>

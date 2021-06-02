@@ -1,0 +1,118 @@
+.pullquote,
+.wp-block-pullquote blockquote {
+	margin: 1.4375rem 0;
+	padding: 0.5em 0 0.5em 1em;
+	border-left: 4px solid $red;
+	font-family: $font-serif;
+	@include font-size(1.25);
+	font-weight: normal;
+	text-align: left;
+
+	&::before,
+	&::after {
+		content: none;
+	}
+
+    p {
+        max-width: 100%;
+        @include font-size(1.25);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+	}
+
+    cite,
+    .bq-citation,
+    .wp-block-pullquote__citation {
+		display: inline-block;
+		font-family: $font-sans;
+        @include font-size(1);
+        font-style: normal;
+        line-height: 1.45;
+        text-transform: none;
+		color: $color-text;
+
+		&::before {
+			content: '';
+			display: inline-block;
+			width: 1.25rem;
+			height: 1px;
+			background: $color-text;
+			margin-right: 0.8rem;
+			vertical-align: middle;
+			margin-top: -0.2rem;
+		}
+	}
+}
+
+.wp-block-pullquote {
+	padding: 0;
+
+	&.alignleft,
+	&.alignright {
+		padding-top: 0.5rem;
+		margin-bottom: 0.5rem;
+
+		blockquote {
+			margin: 0;
+		}
+	}
+
+	&.is-style-dark-gray blockquote {
+		border-color: $gray-dark;
+	}
+
+	&.is-style-yellow blockquote {
+		border-color: $yellow;
+	}
+
+	&.is-style-turquoise blockquote {
+		border-color: $turquoise;
+	}
+
+	&.is-style-blue blockquote {
+		border-color: $blue;
+	}
+}
+
+.has-red-background-color,
+.has-gray-dark-background-color,
+.has-turquoise-background-color,
+.has-blue-background-color,
+.has-purple-background-color {
+	.pullquote,
+	.wp-block-pullquote blockquote {
+		border-left-color: #fff;
+
+		p,
+		cite,
+		.bq-citation,
+		.wp-block-pullquote__citation {
+			color: #fff;
+
+			&::before {
+				background: #fff;
+			}
+		}
+	}
+}
+
+.has-yellow-background-color,
+.has-gray-background-color {
+	.pullquote,
+	.wp-block-pullquote blockquote {
+		border-left-color: $gray-dark;
+
+		p,
+		cite,
+		.bq-citation,
+		.wp-block-pullquote__citation {
+			color: $gray-dark;
+
+			&::before {
+				background: $gray-dark;
+			}
+		}
+	}
+}

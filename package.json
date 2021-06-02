@@ -1,57 +1,23 @@
 {
-  "name": "Hooniverse",
-  "version": "2.0.0",
-  "description": "HooniPress (is that a thing? Can I make that a thing?) based on _s",
-  "author": "CoderAaron",
-  "license": "GPL-2.0-or-later",
-  "keywords": [
-    "Hooniverse",
-    "Theme",
-    "Cars",
-    "Trucks",
-    "Bikes",
-    "Project Cars",
-    "DIY",
-    "Travel",
-    "Adventure",
-    "Podcast",
-    "Videos"
-  ],
-  "homepage": "https://hooniverse.com",
+  "name": "wutheme_chauvenet",
+  "version": "1.1.6",
+  "description": "An official WashU theme for WordPress.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Automattic/_s.git"
+    "url": "https://bitbucket.org/wustl/wutheme_chauvenet"
   },
-  "bugs": {
-    "url": "https://github.com/Automattic/_s/issues"
-  },
+  "keywords": [
+    "wordpress"
+  ],
+  "author": "WashU Web",
+  "license": "GPL-2.0-or-later",
   "devDependencies": {
-    "@wordpress/scripts": "^16.1.0",
-    "@wordpress/stylelint-config": "^19.0.4",
-    "dir-archiver": "^1.2.0",
-    "node-sass": "^6.0.0",
-    "rtlcss": "^3.2.0"
-  },
-  "rtlcssConfig": {
-    "options": {
-      "autoRename": false,
-      "autoRenameStrict": false,
-      "blacklist": {},
-      "clean": true,
-      "greedy": false,
-      "processUrls": false,
-      "stringMap": []
-    },
-    "plugins": [],
-    "map": false
-  },
-  "scripts": {
-    "start": "wp-scripts start",
-    "watch": "node-sass sass/ -o ./ --source-map true --output-style expanded --indent-type tab --indent-width 1 -w",
-    "compile:css": "node-sass sass/ -o ./ && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
-    "compile:rtl": "rtlcss style.css style-rtl.css",
-    "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
-    "lint:js": "wp-scripts lint-js 'js/*.js'",
-    "bundle": "dir-archiver --src . --dest ../hooniverse2.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map"
+    "grunt": "~1.0.4",
+    "grunt-autoprefixer": "~3.0.4",
+    "grunt-contrib-uglify": "~4.0.1",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-sass": "~3.0.0",
+    "load-grunt-tasks": "~3.5.0",
+    "sass": "^1.34.0"
   }
 }
