@@ -1,5 +1,5 @@
 /* Place all custom javascript functions here */
-jQuery(document).ready(function($){
+jQuery(function($){
 
 	// Apply stickyfill to elements with 'stick' class
 	var stickyElements = document.getElementsByClassName('stick');
@@ -9,7 +9,7 @@ jQuery(document).ready(function($){
 
 	// If the current URL matches a link in the menu, apply class of current-page
 	var url = window.location.href;
-	$('.washu-main-menu-content a[href="' + url + '"]').addClass('current-page');
+	$('.hooniverse-main-menu-content a[href="' + url + '"]').addClass('current-page');
 
 	// Footer widget expand/contract toggle
 	$('.footer-widget-title').on('click', function(event){

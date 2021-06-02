@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 wp.hooks.addFilter(
     "blocks.registerBlockType",
-    "washu/change-default-spacer-height",
+    "hooniverse/change-default-spacer-height",
     changeDefaultSpacerHeight,
 );
 

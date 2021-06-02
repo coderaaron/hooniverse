@@ -2,14 +2,14 @@
 	'use strict';
 
 	var document = document || w.document,
-		$menuWrap = $('.washu-main-menu-wrapper'),
-		$menu = $menuWrap.find('.washu-main-menu'),
-		$menuOpen = $('.washu-main-menu-trigger'),
-		$menuContent = $menuWrap.find('.washu-main-menu-content'),
-		$menuList = $menuWrap.find('.washu-main-menu-list'),
+		$menuWrap = $('.hooniverse-main-menu-wrapper'),
+		$menu = $menuWrap.find('.hooniverse-main-menu'),
+		$menuOpen = $('.hooniverse-main-menu-trigger'),
+		$menuContent = $menuWrap.find('.hooniverse-main-menu-content'),
+		$menuList = $menuWrap.find('.hooniverse-main-menu-list'),
 		$menuClose = $menuWrap.find('.main-menu-close'),
 		$menuBack = $menuWrap.find('.main-menu-back'),
-		$menuTitle = $menuWrap.find('.washu-main-menu-title'),
+		$menuTitle = $menuWrap.find('.hooniverse-main-menu-title'),
 		$page = $('#page'),
 		$search = $menuWrap.find('.search-form'),
 		$searchButton = $menuWrap.find('.search-submit'),
@@ -43,7 +43,7 @@
 		// If menu_state item exists in session storage, update menu state
 		var menu_state = sessionStorage.getItem('menu_state');
 		if (menu_state) {
-			$('.menu-item-' + menu_state).parentsUntil($('.washu-main-menu'), 'ul')
+			$('.menu-item-' + menu_state).parentsUntil($('.hooniverse-main-menu'), 'ul')
 				.addClass('move-out')
 				.addClass('active');
 			$('.menu-item-' + menu_state + ' > ul').addClass('active');
@@ -59,7 +59,7 @@
 			$menuTitle[0].innerHTML = currentMenuTitle;
 
 			// Travel up the DOM to collect all of the parent menu titles
-			$('.menu-item-' + menu_state).parentsUntil($('.washu-main-menu'), 'li')
+			$('.menu-item-' + menu_state).parentsUntil($('.hooniverse-main-menu'), 'li')
 				.each(function () {
 					menuTitles.push($(this).find('> .menu-item-link').text());
 				});
@@ -136,9 +136,9 @@
 	// Click handler for moving deeper into sub-menus.
 	$menu.find('.sub-menu-toggle').on('click', function (e) {
 		e.preventDefault();
-		
+
 		unbindTabKeydown();
-		
+
 		$(this).closest("ul").toggleClass('move-out');
 		$(this).closest('li').toggleClass('sub-menu-active');
 		$(this).siblings(".sub-menu").toggleClass('active');
@@ -165,7 +165,7 @@
 		var childrenCount = $(this).siblings(".sub-menu").children().size();
 		// Multiply by 50 to match set height of menu items
 		$menuList.height(childrenCount * 50);
-		
+
 		if ( $page.hasClass('active') ) {
 			bindTabKeydown();
 		}
@@ -174,7 +174,7 @@
 	// Click handler for moving back up the menu tree.
 	$menuBack.on('click', function (e) {
 		e.preventDefault();
-		
+
 		unbindTabKeydown();
 
 		var $levels = $menu.find('.move-out'),
@@ -245,7 +245,7 @@
 		// Only perform function if tab key initiated
 		if (e.keyCode === 9) {
 			// Get all currently visible elements
-			var focusableElements = $('.washu-main-menu a[href]:visible, .washu-main-menu input:visible, .washu-main-menu button:visible');
+			var focusableElements = $('.hooniverse-main-menu a[href]:visible, .hooniverse-main-menu input:visible, .hooniverse-main-menu button:visible');
 			var focusableElements = jQuery.makeArray(focusableElements);
 
 			// Get the index of the current active element within search
@@ -267,7 +267,7 @@
 
 	// On desktop - open submenus when main items are focused and keep open as long as children have focus
 	// Note this only works because the nav menu items are "visible" though we can't see them because opacity:0 so they can have focus even when closed
-	$('.washu-main-menu-list > li.menu-item-has-children a').focus(function(event) {
+	$('.hooniverse-main-menu-list > li.menu-item-has-children a').focus(function(event) {
 		if ( $(this).parent().parent().hasClass('sub-menu') ) {
 			$(this).parent().parent().closest('.menu-item-has-children').addClass('has-focus');
 		} else {
@@ -275,7 +275,7 @@
 		}
 	});
 
-	$('.washu-main-menu-list > li.menu-item-has-children a').blur(function(event) {
+	$('.hooniverse-main-menu-list > li.menu-item-has-children a').blur(function(event) {
 		if ( $(this).parent().parent().hasClass('sub-menu') ) {
 			$(this).parent().parent().closest('.menu-item-has-children').removeClass('has-focus');
 		} else {
@@ -284,8 +284,8 @@
 	});
 
 	var nav = priorityNav.init({
-		mainNavWrapper: '.washu-main-menu-content',
-		mainNav: '.washu-main-menu-list',
+		mainNavWrapper: '.hooniverse-main-menu-content',
+		mainNav: '.hooniverse-main-menu-list',
 		navDropdownLabel: "More",
 		throttleDelay: 20,
 		breakPoint: 899,
