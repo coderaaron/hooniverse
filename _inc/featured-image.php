@@ -7,7 +7,7 @@ function hooniverse_featured_image_instruction( $content ) {
 	if ( 'post' == $GLOBALS['post_type'] ) {
 		$content .= '<p>The featured image will not display unless it is a minimum of 750px wide.</p>';
 	}
-	if ( get_option( 'hooniverse_header_style' ) === 'condensed' && get_option( 'page_on_front' ) == get_the_ID() ) {
+	if ( get_option( 'page_on_front' ) == get_the_ID() ) {
 		$content .= '<p>Minimum: 1440 x 720 pixels (w x h)<br>Recommended: 2880 x 1440 pixels</p>';
 	} elseif ( 'page' == $GLOBALS['post_type'] ) {
 		$content .= '<p>Featured images should be uploaded at dimensions of at least 1440px by 550px.</p>';

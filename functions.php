@@ -215,10 +215,7 @@ require get_template_directory() . '/_inc/dashboard-widgets.php';
 require get_template_directory() . '/_inc/featured-image.php';
 
 /** Homepage featured image overlay fields **/
-$header_style = get_option( 'hooniverse_header_style' );
-if ( $header_style === 'condensed' ) {
-	require get_template_directory() . '/_inc/acf-featured-image-overlay.php';
-}
+require get_template_directory() . '/_inc/acf-featured-image-overlay.php';
 
 /**
  * Prevent post archive pages from displaying in custom menu order.

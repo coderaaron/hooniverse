@@ -82,56 +82,6 @@ function hooniverse_customizer_header( $wp_customize ) {
 }
 add_action( 'customize_register', 'hooniverse_customizer_header' );
 
-
-/**
-* Add affilation fields to theme customizer
-*
-* @param WP_Customize_Manager $wp_customize Theme Customizer object.
-*/
-function hooniverse_customize_affiliation( $wp_customize ) {
-	// Add settings for affiliation and affiliation link
-	$wp_customize->add_setting( 'hooniverse_affiliation', array(
-		'default' => '',
-		'type' => 'option',
-		'sanitize_callback' => 'sanitize_text_field'
-	) );
-	$wp_customize->add_setting( 'hooniverse_affiliation_link', array(
-		'default' => '',
-		'type' => 'option',
-		'sanitize_callback' => 'sanitize_text_field'
-	) );
-	$wp_customize->add_setting( 'hooniverse_logo_selection', array(
-		'default' => 'wustl',
-		'type' => 'option',
-		'sanitize_callback' => 'sanitize_text_field'
-	) );
-
-	// Add controls for affiliation and affiliation link
-	$wp_customize->add_control( 'hooniverse_affiliation' , array(
-		'label' => 'Affiliation',
-		'section' => 'title_tagline',
-		'settings' => 'hooniverse_affiliation',
-	) );
-	$wp_customize->add_control( 'hooniverse_affiliation_link' , array(
-		'label' => 'Affiliation Link',
-		'type' => 'url',
-		'section' => 'title_tagline',
-		'settings' => 'hooniverse_affiliation_link',
-	) );
-    $wp_customize->add_control( 'hooniverse_logo_selection' , array(
-        'label'   => 'Logo',
-        'type'    => 'select',
-		'section' => 'title_tagline',
-	    'settings' => 'hooniverse_logo_selection',
-        'choices'    => array(
-            'wustl' => 'Washington University',
-            'wusm' => 'Washington University School of Medicine',
-        ),
-    ) );
-}
-add_action( 'customize_register', 'hooniverse_customize_affiliation' );
-
-
 /**
 * Add contact information to theme customizer
 *
