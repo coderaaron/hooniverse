@@ -47,12 +47,12 @@ $has_featured_image = has_post_thumbnail() && is_front_page() ? ' has-featured-i
 ?>
 
 <div id="page" class="hfeed site<?php echo $header_style_class . $has_featured_image; ?>">
-	<div class="washu-branding">
+	<div class="hooniverse-branding">
 		<div class="container">
 			<?php $logo_option = get_option( 'chauvenet_logo_selection' );
 			if ( 'wustl' == $logo_option || '' == $logo_option ) { ?>
 				<a href="https://wustl.edu">
-					<?php include( '_assets/img/washu-logo.svg' ); ?>
+					<?php include( '_assets/img/hooniverse-logo.svg' ); ?>
 				</a>
 			<?php } else if ( 'wusm' == $logo_option ) { ?>
 				<a href="https://medicine.wustl.edu">
@@ -60,7 +60,7 @@ $has_featured_image = has_post_thumbnail() && is_front_page() ? ' has-featured-i
 				</a>
 			<?php } else { ?>
 				<a href="https://<?php echo apply_filters( 'chauvenet_header_logo_link', 'wustl.edu' ); ?>">
-					<?php include( apply_filters( 'chauvenet_header_logo_img', '_assets/img/washu-logo.svg' ) ); ?>
+					<?php include( apply_filters( 'chauvenet_header_logo_img', '_assets/img/hooniverse-logo.svg' ) ); ?>
 				</a>
 			<?php } ?>
 		</div>
@@ -84,7 +84,7 @@ $has_featured_image = has_post_thumbnail() && is_front_page() ? ' has-featured-i
 			<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo bloginfo( 'name' ); ?></a></p>
 			<?php } ?>
 
-			<button class="washu-main-menu-trigger mobile-only">
+			<button class="hooniverse-main-menu-trigger mobile-only">
 				<?php include( '_assets/icons/menu-search.svg' ); ?>
 				<span class="screen-reader-text">Open Menu</span>
 			</button>

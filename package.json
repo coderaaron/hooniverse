@@ -1,15 +1,15 @@
 {
-  "name": "wutheme_chauvenet",
-  "version": "1.1.6",
-  "description": "An official WashU theme for WordPress.",
+  "name": "hooniverse_theme",
+  "version": "2.0.0",
+  "description": "HooniPress (is that a thing? Can I make that a thing?)",
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/wustl/wutheme_chauvenet"
+    "url": "https://github.com/coderaaron/hooniverse"
   },
   "keywords": [
     "wordpress"
   ],
-  "author": "WashU Web",
+  "author": "Aaron Graham",
   "license": "GPL-2.0-or-later",
   "devDependencies": {
     "grunt": "~1.0.4",

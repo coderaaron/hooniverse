@@ -1,18 +1,25 @@
 /*!
-Theme Name: WashU Web Theme
-Theme URI: https://webtheme.wustl.edu
-Author: WashU Public Affairs and Medical Public Affairs
-Author URI: https://webtheme.wustl.edu
-Description: An official WashU theme for WordPress.
-Version: 2.0.17
-Text Domain: chauvenet
-Domain Path: /_lang/
+Theme Name: Hooniverse Theme
+URI: https://hooniverse.com
+Description: HooniPress (is that a thing? Can I make that a thing?)
+Author: Aaron Graham
+Author URI: https://coderaaron.com
+Version: 2.0.0
+Requires at least: 5.0
+Tested up to: 5.7.2
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: http: //www.gnu.org/licenses/gpl-2.0.html
+Text Domain: Hooniverse
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
 */
 
 /**
  * Variables and mixins
  */
-@import "washu-brand";
+@import "brand";
 @import "variables";
 @import "mixins";
 

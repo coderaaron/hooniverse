@@ -218,9 +218,6 @@ require get_template_directory() . '/_inc/dashboard-widgets.php';
 /** Add featured image display option and helper text. */
 require get_template_directory() . '/_inc/featured-image.php';
 
-/** Unregister unneeded widgets. */
-require get_template_directory() . '/_inc/widgets.php';
-
 /** Homepage featured image overlay fields **/
 $header_style = get_option( 'chauvenet_header_style' );
 if ( $header_style === 'condensed' ) {
