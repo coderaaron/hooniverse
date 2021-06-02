@@ -1,3 +1,5 @@
+@use "sass:math";
+
 button,
 input,
 select,
@@ -164,7 +166,7 @@ input[type="checkbox"] {
 	margin-bottom: 1em;
 
 	&.large {
-		margin-bottom: 1em / $size-2;
+		margin-bottom: math.div(1em, $size-2);
 		@include font-size($size-2);
 	}
 }
@@ -182,7 +184,7 @@ button.frm-input-group-button {
 	float: right;
 	width: 4em;
 	width: 4rem;
-	padding: (12.5 / 16) * 1em;
+	padding: math.div(12.5, 16) * 1em;
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 }

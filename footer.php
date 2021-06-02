@@ -4,10 +4,10 @@
  *
  * Displays the footer and closes the #page element
  *
- * @package Chauvenet
+ * @package Hooniverse
  */
 
-$options = get_option( 'chauvenet_theme_options' );
+$options = get_option( 'hooniverse_theme_options' );
 $widgetFullWidth = '';
 if ( $options ) {
 	$contactExists = ( array_filter( $options ) ) ? true : false;
@@ -122,7 +122,7 @@ $contactFullWidth = ( is_active_sidebar( 'footer' ) ) ? '' : ' full-width';
 			/**
 			 * Area for cobranding plugin.
 			 */
-			do_action( 'chauvenet_midfooter' );
+			do_action( 'hooniverse_midfooter' );
 			?>
 			<div class="site-info">
 				<p class="footer-copyright">&copy;<?php echo date("Y") ?> Washington University in St. Louis</p>

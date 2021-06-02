@@ -2,17 +2,17 @@
 /**
  * Customize the WordPress implementation of TinyMCE
  *
- * @package Chauvenet
+ * @package Hooniverse
  */
 
 if ( current_user_can( 'edit_posts' ) && current_user_can( 'edit_pages' ) ) {
 	// Register our callback to the appropriate filter
-	add_filter( 'mce_buttons_2', 'chauvenet_add_remove_tinymce_buttons' );
-	add_filter( 'tiny_mce_before_init', 'chauvenet_customize_tinymce' );
+	add_filter( 'mce_buttons_2', 'hooniverse_add_remove_tinymce_buttons' );
+	add_filter( 'tiny_mce_before_init', 'hooniverse_customize_tinymce' );
 }
 
 // Customize the TinyMCE editor
-function chauvenet_customize_tinymce( $init ) {
+function hooniverse_customize_tinymce( $init ) {
 	/* Tiny MCE 4 */
 	$init['block_formats'] = 'Section Heading - h2=h2;Subsection Heading - h3=h3;Third-level Heading - h4=h4;Fourth-level Heading - h5=h5;Paragraph=p;';
     /* Set up your custom style classes */
@@ -61,7 +61,7 @@ function chauvenet_customize_tinymce( $init ) {
 }
 
 // Add and remove buttons from advanced toolbar of TinyMCE
-function chauvenet_add_remove_tinymce_buttons( $buttons ) {
+function hooniverse_add_remove_tinymce_buttons( $buttons ) {
 	// Add formats menu
     array_unshift( $buttons, 'styleselect' );
     // Remove strikethrough, text color, and indent buttons

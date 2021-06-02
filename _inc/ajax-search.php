@@ -1,8 +1,8 @@
 <?php
 /**
- * Chauvenet AJAX Search
+ * Hooniverse AJAX Search
  *
- * @package Chauvenet
+ * @package Hooniverse
  */
 
 function ajax_search() {

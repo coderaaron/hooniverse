@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .section-heading {
 	font-family: $font-serif;
 	font-weight: 400;
@@ -30,14 +32,14 @@
 .lead,
 .is-style-lead {
 	margin-top: 0;
-	margin-bottom: 1.5em / $size-2;
+	margin-bottom: math.div(1.5em, $size-2);
 	font-family: $font-sans;
 	@include font-size($size-2);
 	font-weight: 300;
 	line-height: 1.333;
 	@media screen and (min-width: $break-zoom) {
 		max-width: $break-sm-max;
-		margin-bottom: 1.5em / $size-3;
+		margin-bottom: math.div(1.5em, $size-3);
 		@include font-size($size-3);
 	}
 }

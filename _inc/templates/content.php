@@ -1,6 +1,6 @@
 <?php
 /**
- * @package Chauvenet
+ * @package Hooniverse
  */
 
 	$post_thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium' );
@@ -10,8 +10,8 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class( $hasthumbnail ); ?>>
 	<header class="entry-header">
 		<?php
-		if ( get_field( 'washu_external_url' ) || get_field( 'washu_ppi_external_url' ) ) {
-			$external_link = ( get_field( 'washu_external_url' ) === null ) ? get_field( 'washu_ppi_external_url' ) : get_field( 'washu_external_url' );
+		if ( get_field( 'hooniverse_external_url' ) || get_field( 'hooniverse_ppi_external_url' ) ) {
+			$external_link = ( get_field( 'hooniverse_external_url' ) === null ) ? get_field( 'hooniverse_ppi_external_url' ) : get_field( 'hooniverse_external_url' );
 
 			/**
 			 * If an external link on a post exists, we need to explode the title
@@ -47,14 +47,14 @@
 		?>
 		<?php if ( 'post' === get_post_type() ) : ?>
 			<div class="entry-meta">
-				<?php chauvenet_posted_on(); ?>
+				<?php hooniverse_posted_on(); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 	<?php if ( $post_thumbnail  ) { ?>
 	<figure class="post-image">
 		<?php
-		if ( get_field( 'washu_external_url' ) || get_field( 'washu_ppi_external_url' ) ) {
+		if ( get_field( 'hooniverse_external_url' ) || get_field( 'hooniverse_ppi_external_url' ) ) {
 			?>
 				<a class="entry-title-link" href="<?php echo esc_url( $external_link ); ?>" rel="bookmark"><?php the_post_thumbnail( 'medium' ); ?></a>
 			<?php
@@ -71,7 +71,7 @@
 		<?php
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'chauvenet' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'hooniverse' ),
 				'after'  => '</div>',
 			)
 		);

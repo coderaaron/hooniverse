@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts.
  *
- * @package Chauvenet
+ * @package Hooniverse
  */
 
 get_header(); ?>

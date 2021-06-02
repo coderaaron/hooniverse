@@ -1,8 +1,8 @@
 <?php
 /**
- * Chauvenet functions and definitions
+ * Hooniverse functions and definitions
  *
- * @package Chauvenet
+ * @package Hooniverse
  */
 
 /**
@@ -13,7 +13,7 @@ if ( ! isset( $content_width ) ) {
 }
 
 
-if ( ! function_exists( 'chauvenet_setup' ) ) :
+if ( ! function_exists( 'hooniverse_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -21,12 +21,12 @@ if ( ! function_exists( 'chauvenet_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function chauvenet_setup() {
+function hooniverse_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /_lang/ directory.
 	 */
-	load_theme_textdomain( 'chauvenet', get_template_directory() . '/_lang' );
+	load_theme_textdomain( 'hooniverse', get_template_directory() . '/_lang' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -54,7 +54,7 @@ function chauvenet_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'main' => __( 'Main Menu', 'chauvenet' ),
+		'main' => __( 'Main Menu', 'hooniverse' ),
 	) );
 
 	// Enable support for HTML5 markup.
@@ -78,23 +78,23 @@ function chauvenet_setup() {
 	add_theme_support( 'responsive-embeds' );
 
 }
-endif; // chauvenet_setup
-add_action( 'after_setup_theme', 'chauvenet_setup' );
+endif; // hooniverse_setup
+add_action( 'after_setup_theme', 'hooniverse_setup' );
 
 /**
  * Set the default image link type to none.
  */
-function chauvenet_set_default_link_type() {
+function hooniverse_set_default_link_type() {
 	return 'none';
 }
-add_filter( 'pre_option_image_default_link_type', 'chauvenet_set_default_link_type' );
+add_filter( 'pre_option_image_default_link_type', 'hooniverse_set_default_link_type' );
 
 /**
  * Register widgetized area and update sidebar with default widgets.
  */
-function chauvenet_widgets_init() {
+function hooniverse_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'chauvenet' ),
+		'name'          => __( 'Sidebar', 'hooniverse' ),
 		'id'            => 'sidebar',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -103,15 +103,15 @@ function chauvenet_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Footer', 'chauvenet' ),
+		'name'          => __( 'Footer', 'hooniverse' ),
 		'id'            => 'footer',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s '. chauvenet_count_widgets( 'footer' ) . '">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s '. hooniverse_count_widgets( 'footer' ) . '">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h2 class="footer-widget-title">',
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'chauvenet_widgets_init' );
+add_action( 'widgets_init', 'hooniverse_widgets_init' );
 
 /**
  * Adds featured image size for pages.
@@ -133,20 +133,16 @@ add_filter( 'big_image_size_threshold', '__return_false' );
 /**
  * Enqueue theme scripts and styles.
  */
-function chauvenet_scripts() {
+function hooniverse_scripts() {
 	// Get the current theme version.
 	$this_theme = wp_get_theme();
 	$this_version = $this_theme->get( 'Version' );
 
-	// Base Chauvenet style + script.
-	wp_enqueue_style( 'chauvenet-style', get_stylesheet_uri(), array(), $this_version );
-	wp_enqueue_script( 'chauvenet-scripts', get_template_directory_uri() . '/_assets/js/scripts.js', array( 'jquery' ), $this_version, true );
+	// Base Hooniverse style + script.
+	wp_enqueue_style( 'hooniverse-style', get_stylesheet_uri(), array(), $this_version );
+	wp_enqueue_script( 'hooniverse-scripts', get_template_directory_uri() . '/_assets/js/scripts.js', array( 'jquery' ), $this_version, true );
 
-	wp_add_inline_script( 'chauvenet-scripts', 'var ajaxurl = "' . admin_url( 'admin-ajax.php' ) . '";', 'before' );
-
-	// Base Googe Font style + script.
-	wp_register_style( 'googleFonts', 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic|Libre+Baskerville:400,700,400italic' );
-	wp_enqueue_style( 'googleFonts' );
+	wp_add_inline_script( 'hooniverse-scripts', 'var ajaxurl = "' . admin_url( 'admin-ajax.php' ) . '";', 'before' );
 
 	// Enqueue Dashicons for front end usage.
 	wp_enqueue_style( 'dashicons' );
@@ -161,34 +157,34 @@ function chauvenet_scripts() {
 		wp_dequeue_style( 'frm_fonts' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'chauvenet_scripts' );
+add_action( 'wp_enqueue_scripts', 'hooniverse_scripts' );
 
 /**
  * Add editor styles for the classic editor.
  */
-function chauvenet_editor_styles() {
+function hooniverse_editor_styles() {
     $font_url = str_replace( ',', '%2C', 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic|Libre+Baskerville:400,700,400italic' );
     add_editor_style( $font_url );
     add_editor_style();
 }
-add_action( 'after_setup_theme', 'chauvenet_editor_styles' );
+add_action( 'after_setup_theme', 'hooniverse_editor_styles' );
 
 /**
  * Enqueue block editor styles.
  */
-function chauvenet_block_editor_styles() {
+function hooniverse_block_editor_styles() {
 	$this_theme = wp_get_theme();
 	$this_version = $this_theme->get( 'Version' );
 
-	wp_enqueue_style( 'chauvenet-block-editor-styles', get_theme_file_uri( '/block-editor-style.css' ), false, $this_version );
+	wp_enqueue_style( 'hooniverse-block-editor-styles', get_theme_file_uri( '/block-editor-style.css' ), false, $this_version );
 
 	// Add Google fonts to editor
-	wp_enqueue_style( 'chauvenet-editor-fonts', 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic|Libre+Baskerville:400,700,400italic' );
+	wp_enqueue_style( 'hooniverse-editor-fonts', 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic|Libre+Baskerville:400,700,400italic' );
 
 	// Remove unused blocks
-	wp_enqueue_script( 'chauvenet-core-blocks', get_template_directory_uri() . '/_assets/js/core-blocks.js', array( 'wp-blocks' ), $this_version, true );
+	wp_enqueue_script( 'hooniverse-core-blocks', get_template_directory_uri() . '/_assets/js/core-blocks.js', array( 'wp-blocks' ), $this_version, true );
 }
-add_action( 'enqueue_block_editor_assets', 'chauvenet_block_editor_styles' );
+add_action( 'enqueue_block_editor_assets', 'hooniverse_block_editor_styles' );
 
 /** Custom template tags for this theme. */
 require get_template_directory() . '/_inc/template-tags.php';
@@ -219,7 +215,7 @@ require get_template_directory() . '/_inc/dashboard-widgets.php';
 require get_template_directory() . '/_inc/featured-image.php';
 
 /** Homepage featured image overlay fields **/
-$header_style = get_option( 'chauvenet_header_style' );
+$header_style = get_option( 'hooniverse_header_style' );
 if ( $header_style === 'condensed' ) {
 	require get_template_directory() . '/_inc/acf-featured-image-overlay.php';
 }
@@ -231,9 +227,9 @@ if ( $header_style === 'condensed' ) {
  *
  * @param array $query the main query for the page.
  * */
-function chauvenet_post_archive_ignore_menu_order( $query ) {
+function hooniverse_post_archive_ignore_menu_order( $query ) {
 	if ( ( ! is_admin() && ! ( $query->get( 'page_id' ) === get_option( 'page_on_front' ) || is_front_page() ) && $query->is_main_query() ) && ( is_home() || is_archive() ) ) {
 		$query->set( 'ignore_custom_sort', true );
 	}
 }
-add_action( 'pre_get_posts', 'chauvenet_post_archive_ignore_menu_order' );
+add_action( 'pre_get_posts', 'hooniverse_post_archive_ignore_menu_order' );

@@ -8,7 +8,7 @@
 		position: relative;
 	}
 
-	.washu-main-menu-wrapper ul {
+	.hooniverse-main-menu-wrapper ul {
 		margin-left: 0px;
 
 		a {
@@ -17,7 +17,7 @@
 	}
 
 	.nav-search,
-	.washu-main-menu-content .desktop-search-close {
+	.hooniverse-main-menu-content .desktop-search-close {
 		display: none;
 	}
 
@@ -29,11 +29,11 @@
 	input[type=text]::-ms-clear {  display: none; width : 0; height: 0; }
 	input[type=text]::-ms-reveal {  display: none; width : 0; height: 0; }
 
-	.washu-main-menu-wrapper {
+	.hooniverse-main-menu-wrapper {
 		@include font-smoothing;
 	}
 
-	.washu-main-menu-trigger {
+	.hooniverse-main-menu-trigger {
 		display: inline-block;
 		background: none;
 		border: none;
@@ -55,15 +55,15 @@
 		}
 	}
 
-	.washu-main-menu-content a,
-	.washu-main-menu-content ul a,
-	.washu-main-menu-content button {
+	.hooniverse-main-menu-content a,
+	.hooniverse-main-menu-content ul a,
+	.hooniverse-main-menu-content button {
 		height: 50px;
 		padding: 0 20px;
 		line-height: 50px;
 	}
 
-	.washu-main-menu {
+	.hooniverse-main-menu {
 		box-shadow: 0 50px 100px rgba(61, 61, 61, 0.2), 0 5px 20px 5px rgba(0, 0, 0, 0.35);
 		position: absolute;
 		top: 0.55em;
@@ -162,7 +162,7 @@
 		}
 	}
 
-	ul.washu-main-menu-list {
+	ul.hooniverse-main-menu-list {
 		margin-bottom: 0;
 		transition: height 0.3s;
 
@@ -171,7 +171,7 @@
 		}
 	}
 
-	.washu-main-menu-content {
+	.hooniverse-main-menu-content {
 		position: relative;
 
 		.header-alt & {
@@ -187,7 +187,7 @@
 		}
 	}
 
-	.washu-main-menu-list,
+	.hooniverse-main-menu-list,
 	.sub-menu {
 		position: relative;
 		bottom: 0;
@@ -237,7 +237,7 @@
 		}
 	}
 
-	.washu-main-menu-title {
+	.hooniverse-main-menu-title {
 		display: block;
 		overflow: hidden;
 		padding: 0 60px;
@@ -364,7 +364,7 @@
 		}
 	}
 
-	.washu-main-menu-content .header-search {
+	.hooniverse-main-menu-content .header-search {
 		margin: 0;
 
 		.search-submit {
@@ -405,13 +405,13 @@
 		}
 	}
 
-	.no-js .washu-main-menu-wrapper:hover .washu-main-menu {
+	.no-js .hooniverse-main-menu-wrapper:hover .hooniverse-main-menu {
 		visibility: visible;
 		opacity: 1;
 		transform: translateY(0);
 	}
 
-	.no-js .washu-main-menu-wrapper .main-menu-close {
+	.no-js .hooniverse-main-menu-wrapper .main-menu-close {
 		display: none;
 	}
 
@@ -420,12 +420,12 @@
 	}
 
 	.site .sub-menu.active,
-	.site .washu-main-menu .main-menu-back.visible {
+	.site .hooniverse-main-menu .main-menu-back.visible {
 		visibility: hidden;
 	}
 
 	.site.active .sub-menu.active,
-	.site.active .washu-main-menu .main-menu-back.visible {
+	.site.active .hooniverse-main-menu .main-menu-back.visible {
 		visibility: visible;
 	}
 

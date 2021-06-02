@@ -2,22 +2,22 @@
 /**
  * Custom functions that act independently of the theme templates
  *
- * @package Chauvenet
+ * @package Hooniverse
  */
 
 /**
  * Customize the title tag.
  */
-function chauvenet_document_title_separator( $sep ) {
+function hooniverse_document_title_separator( $sep ) {
 	$sep = '|'; // separator
 	return $sep;
 }
-add_filter( 'document_title_separator', 'chauvenet_document_title_separator' );
+add_filter( 'document_title_separator', 'hooniverse_document_title_separator' );
 
 /**
  * Append the university's name to each page's <title>.
  */
-function chauvenet_override_post_title( $title ) {
+function hooniverse_override_post_title( $title ) {
 	// If on the home or front page, skip the page title, but keep the site's name.
 	if ( is_home() || is_front_page() ) {
 		$title['title'] = '';
@@ -26,27 +26,27 @@ function chauvenet_override_post_title( $title ) {
 	// Remove the site "tagline" altogether
 	$title['tagline'] = '';
 	// append the university name to every page
-	$title['site'] = $title['site'] . ' | Washington University in St. Louis';
+	$title['site'] = $title['site'] . ' | Hooniverse';
 	return $title;
 }
-add_filter( 'document_title_parts', 'chauvenet_override_post_title' );
+add_filter( 'document_title_parts', 'hooniverse_override_post_title' );
 
 /**
  * Add a pingback url auto-discovery header for singularly identifiable articles.
  */
-function chauvenet_pingback_header() {
+function hooniverse_pingback_header() {
 	if ( is_singular() && pings_open() ) {
 		printf( '<link rel="pingback" href="%s">' . "\n", get_bloginfo( 'pingback_url' ) );
 	}
 }
-add_action( 'wp_head', 'chauvenet_pingback_header' );
+add_action( 'wp_head', 'hooniverse_pingback_header' );
 
 /**
  * Count number of widgets in a sidebar
  * Used to determine layout, by adding classes to widget
  * Modified from: https://gist.github.com/slobodan/6156076
  */
-function chauvenet_count_widgets( $sidebar_id ) {
+function hooniverse_count_widgets( $sidebar_id ) {
 	global $sidebars_widgets;
 	if ( empty( $sidebars_widgets ) ) {
 		$sidebars_widgets = get_option( 'sidebars_widgets', array() );
@@ -97,7 +97,7 @@ add_filter( 'wp_get_attachment_url', 'fix_ssl_attachment_url' );
  * @param WP_Post $item        The post object associated with this nav menu item.
  * @return string The new HTML for the starting element of the menu item.
  */
-function chauvenet_filter_walker_nav_menu_start_el( $item_output, $item ) {
+function hooniverse_filter_walker_nav_menu_start_el( $item_output, $item ) {
 	$classes = array_values( $item->classes );
 
 	$item_output = str_replace( '<a ', '<a class="menu-item-link" ', $item_output );
@@ -108,12 +108,12 @@ function chauvenet_filter_walker_nav_menu_start_el( $item_output, $item ) {
 
 	return $item_output;
 }
-add_filter( 'walker_nav_menu_start_el', 'chauvenet_filter_walker_nav_menu_start_el', 10, 2 );
+add_filter( 'walker_nav_menu_start_el', 'hooniverse_filter_walker_nav_menu_start_el', 10, 2 );
 
 /**
  * Rearranges the admin menu to move Pages and Posts around.
  */
-function washu_custom_menu_order($menu_ord) {
+function hooniverse_custom_menu_order($menu_ord) {
     if ( ! $menu_ord ) {
     	return true;
     }
@@ -124,5 +124,5 @@ function washu_custom_menu_order($menu_ord) {
         'edit.php?post_type=page', // Pages
     );
 }
-add_filter('custom_menu_order', 'washu_custom_menu_order'); // Activate custom_menu_order
-add_filter('menu_order', 'washu_custom_menu_order');
+add_filter('custom_menu_order', 'hooniverse_custom_menu_order'); // Activate custom_menu_order
+add_filter('menu_order', 'hooniverse_custom_menu_order');

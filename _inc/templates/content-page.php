@@ -2,7 +2,7 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package Chauvenet
+ * @package Hooniverse
  */
 ?>
 
@@ -17,14 +17,14 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'chauvenet' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'hooniverse' ),
 				'after'  => '</div>',
 			) );
 		?>
 	</div><!-- .page-content -->
 	<?php
 	if ( !is_admin_bar_showing() ) {
-		edit_post_link( __( 'Edit', 'chauvenet' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer>' );
+		edit_post_link( __( 'Edit', 'hooniverse' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer>' );
 	}
 	?>
 </article><!-- #post-## -->

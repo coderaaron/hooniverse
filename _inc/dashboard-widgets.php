@@ -2,7 +2,7 @@
 /**
  * Customizing the dashboard widgets
  *
- * @package Chauvenet
+ * @package Hooniverse
  */
 
 /*
@@ -25,18 +25,18 @@ function disable_default_dashboard_widgets() {
 add_action( 'wp_dashboard_setup', 'disable_default_dashboard_widgets', 20 );
 
 /* Custom Dashboard Widgets */
-function washu_custom_dashboard_widgets() {
+function hooniverse_custom_dashboard_widgets() {
 	global $wp_meta_boxes;
 
 	// Link to support/ documentation site, place high on the left column
-	wp_add_dashboard_widget( 'washu_support_link_widget', 'Get help with your site', 'washu_support_link' );
+	wp_add_dashboard_widget( 'hooniverse_support_link_widget', 'Get help with your site', 'hooniverse_support_link' );
 
 	// Relocate this widget into the top left position. Thank you, Codex!
 	// Get the regular dashboard widgets array (which has our new widget already, but at the end)
 	$normal_dashboard = $wp_meta_boxes['dashboard']['normal']['core'];
 	// Backup and delete our new dashboard widget from the end of the array
-	$our_widget_backup = array( 'washu_support_link_widget' => $normal_dashboard['washu_support_link_widget'] );
-	unset( $normal_dashboard['washu_support_link_widget'] );
+	$our_widget_backup = array( 'hooniverse_support_link_widget' => $normal_dashboard['hooniverse_support_link_widget'] );
+	unset( $normal_dashboard['hooniverse_support_link_widget'] );
 	// Merge the two arrays together so our widget is at the beginning
 	$sorted_dashboard = array_merge( $our_widget_backup, $normal_dashboard );
 	// Save the sorted array back into the original metaboxes
@@ -44,11 +44,11 @@ function washu_custom_dashboard_widgets() {
 
 	// Place additional custom dashboard widgets here, too!
 }
-add_action( 'wp_dashboard_setup', 'washu_custom_dashboard_widgets' );
+add_action( 'wp_dashboard_setup', 'hooniverse_custom_dashboard_widgets' );
 
-function washu_support_link() {
+function hooniverse_support_link() {
 	// check for which editor is activate
-	$editor = washu_editor_check();
+	$editor = hooniverse_editor_check();
 
 	// set variables based on which editor; assume we're using blocks
 	$guides_url = 'https://webtheme.wustl.edu/guides/';
@@ -69,7 +69,7 @@ function washu_support_link() {
 	}
 
 	if ( 'classic' == $editor ) {
-		echo '<p>Tutorials, training and support requests for your WashU Web Theme site:</p>';
+		echo '<p>Tutorials, training and support requests for your hooniverse Web Theme site:</p>';
 	}
 
 	echo '<p><strong><a href="' . $guides_url . '">Guides and Tutorials &raquo;</a></strong><br>Find tutorials to help you build or update your site.</p>';
@@ -87,14 +87,14 @@ function washu_support_link() {
 	<h3 style="font-weight:bold;">Your editor: ' . $ed_pretty . '</h3>
 	<hr>';
 
-	echo "<p><strong>$block_editor_heading</strong><br>The new block editor started rolling out to WashU Sites in June&nbsp;2020.</p>";
+	echo "<p><strong>$block_editor_heading</strong><br>The new block editor started rolling out to hooniverse Sites in June&nbsp;2020.</p>";
 
 	echo "<p><a href='$block_editor_update_url'>About the update &raquo;</a><br>
 	<a href='$block_editor_convert_url'>$block_editor_convert_text &raquo;</a></p>";
 
 }
 
-function washu_editor_check() {
+function hooniverse_editor_check() {
 	/**
 	 * Detect if plugin is active. For use in Admin area only.
 	 */

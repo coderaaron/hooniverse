@@ -1,11 +1,11 @@
-<div class="washu-main-menu-wrapper">
+<div class="hooniverse-main-menu-wrapper">
 	<div class="container">
-		<nav class="washu-main-menu">
+		<nav class="hooniverse-main-menu">
 			<button class="main-menu-back mobile-only">Back</button>
 			<button class="main-menu-close mobile-only">Close</button>
-			<span class="washu-main-menu-title mobile-only">Menu</span>
+			<span class="hooniverse-main-menu-title mobile-only">Menu</span>
 
-			<div class="washu-main-menu-content">
+			<div class="hooniverse-main-menu-content">
 				<div class="header-search mobile-only">
 					<?php get_search_form(); ?>
 					<button class="desktop-search-close">
@@ -14,8 +14,8 @@
 					</button>
 				</div>
 
-				<ul class="washu-main-menu-list">
-					<?php chauvenet_main_menu(); ?>
+				<ul class="hooniverse-main-menu-list">
+					<?php hooniverse_main_menu(); ?>
 				</ul>
 
 				<div class="nav-search">
@@ -24,7 +24,7 @@
 						<span class="screen-reader-text">Open Search</span>
 					</button>
 				</div>
-			</div><!-- .washu-main-menu-content -->
-		</nav> <!-- .washu-main-menu -->
+			</div><!-- .hooniverse-main-menu-content -->
+		</nav> <!-- .hooniverse-main-menu -->
 	</div>
-</div> <!-- .washu-main-menu-wrapper -->
+</div> <!-- .hooniverse-main-menu-wrapper -->

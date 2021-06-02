@@ -4,13 +4,13 @@
  *
  * The template for displaying full width pages. Sidebar not included.
  *
- * @package Chauvenet
+ * @package Hooniverse
  */
 
 get_header();
 
 // Feature image if there's a thumbnail and the toggle is on.
-$header_style = get_option( 'chauvenet_header_style' );
+$header_style = get_option( 'hooniverse_header_style' );
 if ( $header_style === 'condensed' ) {
 	get_template_part( '_inc/templates/page-thumbnail-img-showcase' );
 } elseif ( has_post_thumbnail() ) {

@@ -2,7 +2,7 @@
 /**
  * The template for displaying Archive pages.
  *
- * @package Chauvenet
+ * @package Hooniverse
  */
 
 get_header(); ?>
@@ -30,7 +30,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php chauvenet_paging_nav(); ?>
+			<?php hooniverse_paging_nav(); ?>
 
 		<?php else : ?>
 

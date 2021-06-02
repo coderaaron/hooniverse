@@ -4,7 +4,7 @@
  *
  * Opens the #page element and displays all of the <head> section
  *
- * @package Chauvenet
+ * @package Hooniverse
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
@@ -36,12 +36,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<a class="skip-link" href="#content"><?php esc_html_e( 'Skip to content', 'chauvenet' ); ?></a>
-<a class="skip-link" id="search-skip-link" href="#header-search-field"><?php esc_html_e( 'Skip to search', 'chauvenet' ); ?></a>
-<a class="skip-link" href="#colophon"><?php esc_html_e( 'Skip to footer', 'chauvenet' ); ?></a>
+<a class="skip-link" href="#content"><?php esc_html_e( 'Skip to content', 'hooniverse' ); ?></a>
+<a class="skip-link" id="search-skip-link" href="#header-search-field"><?php esc_html_e( 'Skip to search', 'hooniverse' ); ?></a>
+<a class="skip-link" href="#colophon"><?php esc_html_e( 'Skip to footer', 'hooniverse' ); ?></a>
 
 <?php
-$header_style = get_option( 'chauvenet_header_style' ) ? get_option( 'chauvenet_header_style' ) : 'default';
+$header_style = get_option( 'hooniverse_header_style' ) ? get_option( 'hooniverse_header_style' ) : 'default';
 $header_style_class = $header_style == 'condensed' ? ' header-alt' : '';
 $has_featured_image = has_post_thumbnail() && is_front_page() ? ' has-featured-image' : '';
 ?>
@@ -49,7 +49,7 @@ $has_featured_image = has_post_thumbnail() && is_front_page() ? ' has-featured-i
 <div id="page" class="hfeed site<?php echo $header_style_class . $has_featured_image; ?>">
 	<div class="hooniverse-branding">
 		<div class="container">
-			<?php $logo_option = get_option( 'chauvenet_logo_selection' );
+			<?php $logo_option = get_option( 'hooniverse_logo_selection' );
 			if ( 'wustl' == $logo_option || '' == $logo_option ) { ?>
 				<a href="https://wustl.edu">
 					<?php include( '_assets/img/hooniverse-logo.svg' ); ?>
@@ -59,8 +59,8 @@ $has_featured_image = has_post_thumbnail() && is_front_page() ? ' has-featured-i
 					<?php include( '_assets/img/wusm-logo.svg' ); ?>
 				</a>
 			<?php } else { ?>
-				<a href="https://<?php echo apply_filters( 'chauvenet_header_logo_link', 'wustl.edu' ); ?>">
-					<?php include( apply_filters( 'chauvenet_header_logo_img', '_assets/img/hooniverse-logo.svg' ) ); ?>
+				<a href="https://<?php echo apply_filters( 'hooniverse_header_logo_link', 'wustl.edu' ); ?>">
+					<?php include( apply_filters( 'hooniverse_header_logo_img', '_assets/img/hooniverse-logo.svg' ) ); ?>
 				</a>
 			<?php } ?>
 		</div>
@@ -68,9 +68,9 @@ $has_featured_image = has_post_thumbnail() && is_front_page() ? ' has-featured-i
 
 	<header class="site-header" role="banner">
 		<div class="container">
-			<?php if ( $header_style == 'default' && $affiliation = apply_filters( 'chauvenet_affiliation', get_option( 'chauvenet_affiliation' ) ) ) {
+			<?php if ( $header_style == 'default' && $affiliation = apply_filters( 'hooniverse_affiliation', get_option( 'hooniverse_affiliation' ) ) ) {
 				echo '<p class="site-affiliation">';
-				if ( $affiliation_link = apply_filters( 'chauvenet_affiliation_link' , get_option( 'chauvenet_affiliation_link' ) ) ) {
+				if ( $affiliation_link = apply_filters( 'hooniverse_affiliation_link' , get_option( 'hooniverse_affiliation_link' ) ) ) {
 					echo '<a href="' . $affiliation_link . '">' . $affiliation . '</a>';
 				} else {
 					echo $affiliation;

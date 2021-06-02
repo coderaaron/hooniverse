@@ -2,11 +2,11 @@
 /**
  * The template for displaying the sidebar.
  *
- * @package Chauvenet
+ * @package Hooniverse
  */
 
 // Calculate the subnav. Function documented in template-tags.php.
-$subnav = chauvenet_get_sidebar_nav();
+$subnav = hooniverse_get_sidebar_nav();
 
 if ( is_active_sidebar( 'sidebar' ) || $subnav ) { ?>
 

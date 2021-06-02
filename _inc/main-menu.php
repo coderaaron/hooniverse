@@ -1,6 +1,6 @@
 <?php
 
-function chauvenet_main_menu() {
+function hooniverse_main_menu() {
 
 	// Check if custom domain is active AND user is logged in.
 	// 'DOMAIN_MAPPING' is constant used by CampusPress for their domain mapping tool.
@@ -10,7 +10,7 @@ function chauvenet_main_menu() {
 	}
 
 	// If conditions above are not met, try to get the menu from a transient first
-	if ( ( ! $menu = get_transient( 'chauvenet_main_menu' ) ) || true == $criteria_check ) {
+	if ( ( ! $menu = get_transient( 'hooniverse_main_menu' ) ) || true == $criteria_check ) {
 
 		if ( has_nav_menu( 'main' ) ) {
 
@@ -30,7 +30,7 @@ function chauvenet_main_menu() {
 				'title_li' => '', '',
 				'exclude'  => $frontpage_id,
 				'echo'     => false,
-				'walker'   => new chauvenet_main_menu(),
+				'walker'   => new hooniverse_main_menu(),
 			);
 
 			$menu = wp_list_pages( $args );
@@ -39,13 +39,13 @@ function chauvenet_main_menu() {
 		/*
 		 * Do not store a transient if the current user is logged in AND custom domain is in use.
 		 *
-		 * In the WashU Sites environment, sites with a custom subdomain will
+		 * In the Multisite environment, sites with a custom subdomain will
 		 * store the menu using the sites.wustl.edu address in the transient,
 		 * and we'd like it to have the subdomain address instead.
 		 */
 		if ( ! $criteria_check ) {
 			// Cache the resulting menu in a transient for 24 hours
-			set_transient( 'chauvenet_main_menu', $menu, 60*60*24 );
+			set_transient( 'hooniverse_main_menu', $menu, 60*60*24 );
 		}
 	}
 
@@ -53,10 +53,10 @@ function chauvenet_main_menu() {
 }
 
 
-function chauvenet_main_menu_flush_cached_menu() {
-	delete_transient( 'chauvenet_main_menu' );
+function hooniverse_main_menu_flush_cached_menu() {
+	delete_transient( 'hooniverse_main_menu' );
 }
-add_action( 'wp_update_nav_menu',  'chauvenet_main_menu_flush_cached_menu' );
-add_action( 'publish_page', 'chauvenet_main_menu_flush_cached_menu' );
-add_action( 'edit_page', 'chauvenet_main_menu_flush_cached_menu' );
-add_action( 'trash_page', 'chauvenet_main_menu_flush_cached_menu' );
+add_action( 'wp_update_nav_menu',  'hooniverse_main_menu_flush_cached_menu' );
+add_action( 'publish_page', 'hooniverse_main_menu_flush_cached_menu' );
+add_action( 'edit_page', 'hooniverse_main_menu_flush_cached_menu' );
+add_action( 'trash_page', 'hooniverse_main_menu_flush_cached_menu' );

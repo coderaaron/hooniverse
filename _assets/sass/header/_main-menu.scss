@@ -1,7 +1,7 @@
 /**
  * Main menu styles that are shared between mobile and desktop.
  */
-.washu-main-menu-wrapper {
+.hooniverse-main-menu-wrapper {
 	background-color: $gray-dark;
 
 	a {
@@ -205,7 +205,7 @@
 			}
 		}
 
-		.washu-main-menu-content {
+		.hooniverse-main-menu-content {
 			text-align: left;
 			position: relative;
 			padding-right: 4.6rem;
@@ -215,7 +215,7 @@
 				position: relative;
 				height: 50px;
 
-				.washu-main-menu-list > li.menu-item,
+				.hooniverse-main-menu-list > li.menu-item,
 				.nav-search,
 				.more-dropdown-wrapper,
 				.more-dropdown-toggle {
@@ -267,7 +267,7 @@
 			}
 		}
 
-		.washu-main-menu-list {
+		.hooniverse-main-menu-list {
 			overflow-y: visible;
 			margin: 0 0 0 -.833rem;
 			list-style: none;
@@ -504,7 +504,7 @@
 		}
 	}
 
-	.washu-main-menu-content.priority-nav-has-dropdown {
+	.hooniverse-main-menu-content.priority-nav-has-dropdown {
 		overflow: visible;
 	}
 
@@ -537,7 +537,7 @@
 			width: auto;
 		}
 
-		ul.washu-main-menu-list.desktop-search-active {
+		ul.hooniverse-main-menu-list.desktop-search-active {
 			text-align: left;
 		}
 	}
@@ -553,7 +553,7 @@
 	}
 }
 
-.mobile-only, .child-nav, .washu-main-menu-wrapper ul ul ul {
+.mobile-only, .child-nav, .hooniverse-main-menu-wrapper ul ul ul {
 	@media screen and (min-width: $break-menu) {
 		display: none;
 	}
@@ -565,31 +565,31 @@
 	text-align: center;
 	padding: 2rem;
 }
-  
+
   .path {
 	stroke-dasharray: 37;
 	stroke-dashoffset: 0;
 	animation: dash 1s linear alternate infinite;
 }
-  
+
   .path-second {
 	stroke-dasharray: 30;
 	stroke-dashoffset: 0;
 	animation: dash-second 1s linear alternate infinite;
 }
-  
+
   .path-small {
 	stroke-dasharray: 21;
 	stroke-dashoffset: 0;
 	animation: dash-small 1s linear alternate infinite;
 }
-  
+
   .path-small-second {
 	stroke-dasharray: 19;
 	stroke-dashoffset: 0;
 	animation: dash-small-second 1s linear alternate infinite;
 }
-  
+
   @keyframes dash {
 	from {
 	  stroke-dashoffset: 0;
@@ -598,7 +598,7 @@
 	  stroke-dashoffset: 37;
 	}
 }
-  
+
   @keyframes dash-second {
 	from {
 	  stroke-dashoffset: 0;
@@ -607,7 +607,7 @@
 	  stroke-dashoffset: 30;
 	}
 }
-  
+
   @keyframes dash-small {
 	from {
 	  stroke-dashoffset: 0;
@@ -616,7 +616,7 @@
 	  stroke-dashoffset: 21;
 	}
 }
-  
+
   @keyframes dash-small-second {
 	from {
 	  stroke-dashoffset: 0;

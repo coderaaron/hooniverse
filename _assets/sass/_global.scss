@@ -1,3 +1,5 @@
+@use "sass:math";
+
 html {
 	box-sizing: border-box;
 }
@@ -90,10 +92,10 @@ pre {
 	font-family: "Courier 10 Pitch", Courier, monospace;
 	@include font-size($size-0);
 	line-height: 1.6;
-	margin-bottom: 1.6em / $size-2;
+	margin-bottom: math.div(1.6em, $size-2);
 	max-width: 100%;
 	overflow: auto;
-	padding: 1.6em / $size-2;
+	padding: math.div(1.6em, $size-2);
 }
 
 code, kbd, tt, var {

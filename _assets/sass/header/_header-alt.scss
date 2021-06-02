@@ -36,16 +36,16 @@
 			display: none;
 		}
 
-		.washu-main-menu-wrapper {
+		.hooniverse-main-menu-wrapper {
 			width: 100%;
 			margin-bottom: 0;
 		}
 
-		.washu-main-menu-content {
+		.hooniverse-main-menu-content {
 			text-align: left;
 		}
 
-		.washu-main-menu-list {
+		.hooniverse-main-menu-list {
 			text-align: left;
 		}
 
@@ -96,13 +96,13 @@
 		}
 	}
 
-	.washu-main-menu-trigger {
+	.hooniverse-main-menu-trigger {
 		svg path {
 			fill: #fff;
 		}
 	}
 
-	.washu-main-menu-wrapper {
+	.hooniverse-main-menu-wrapper {
 		background: none;
 
 		@media screen and (min-width: $break-menu) {
@@ -111,7 +111,7 @@
 			margin-top: auto;
 			margin-bottom: 0.8em;
 
-			.washu-main-menu-content {
+			.hooniverse-main-menu-content {
 				text-align: right;
 				padding-right: 3.375rem;
 			}
@@ -129,7 +129,7 @@
 			}
 		}
 
-		.washu-main-menu-list {
+		.hooniverse-main-menu-list {
 			@media screen and (min-width: $break-menu) {
 				text-align: right;
 				display: inline-block;
