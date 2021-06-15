@@ -42,7 +42,7 @@
 	}
 }
 
-.page-template-default {
+.page-template-page-sidebar {
 	.content-area {
 		@media screen and (min-width: $break-menu) {
 			width: 66%;
@@ -51,7 +51,7 @@
 	}
 }
 
-.page-template-page-full {
+.page-template-default {
 	.content-area {
 		@extend .col-md-10;
 		margin-left: auto;

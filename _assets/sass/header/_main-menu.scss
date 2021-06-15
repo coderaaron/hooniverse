@@ -2,7 +2,8 @@
  * Main menu styles that are shared between mobile and desktop.
  */
 .hooniverse-main-menu-wrapper {
-	background-color: $gray-dark;
+	background-color: black;
+	font-family: $font-serif;
 
 	a {
 		color: #fff;
@@ -11,6 +12,7 @@
 		&.menu-item-link {
 			&:hover,
 			&:focus {
+				color: $tangerine;
 				text-decoration: underline;
 			}
 		}
@@ -104,7 +106,7 @@
 					position: absolute;
 					top: 0;
 					right: 0;
-					background: $red;
+					background: $tangerine;
 					border: 0;
 					border-radius: 0;
 					height: 42px;
@@ -262,7 +264,7 @@
 				}
 
 				&:hover {
-					background: $red;
+					background: $tangerine;
 				}
 			}
 		}
@@ -276,7 +278,6 @@
 
 			a {
 				color: #fff;
-				font-family: $font-sans;
 			}
 
 			> li.main-links,
@@ -300,7 +301,7 @@
 				}
 
 				> a.menu-item-link {
-					font-size: .875em;
+					font-size: 1em;
 					font-weight: 600;
 					letter-spacing: .05em;
 					text-transform: uppercase;
@@ -317,7 +318,6 @@
 					top: 50px;
 					padding: 5px 0 10px;
 					left: 0;
-					font-family: $font-sans;
 					box-shadow: none;
 					opacity: 0;
 					visibility: hidden;
@@ -356,6 +356,7 @@
 		background: none;
 		border: none;
 		border-radius: 0;
+		font-family: $font-serif;
 		-webkit-appearance: none;
 		@include font-smoothing;
 		font-size: .875em;
@@ -553,75 +554,19 @@
 	}
 }
 
+@keyframes fadein {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
 .mobile-only, .child-nav, .hooniverse-main-menu-wrapper ul ul ul {
 	@media screen and (min-width: $break-menu) {
 		display: none;
 	}
 }
 
-// loader 2
-.shield {
-	margin-bottom: 0;
-	text-align: center;
-	padding: 2rem;
-}
-
-  .path {
-	stroke-dasharray: 37;
-	stroke-dashoffset: 0;
-	animation: dash 1s linear alternate infinite;
-}
-
-  .path-second {
-	stroke-dasharray: 30;
-	stroke-dashoffset: 0;
-	animation: dash-second 1s linear alternate infinite;
-}
-
-  .path-small {
-	stroke-dasharray: 21;
-	stroke-dashoffset: 0;
-	animation: dash-small 1s linear alternate infinite;
-}
-
-  .path-small-second {
-	stroke-dasharray: 19;
-	stroke-dashoffset: 0;
-	animation: dash-small-second 1s linear alternate infinite;
-}
-
-  @keyframes dash {
-	from {
-	  stroke-dashoffset: 0;
-	}
-	to {
-	  stroke-dashoffset: 37;
-	}
-}
-
-  @keyframes dash-second {
-	from {
-	  stroke-dashoffset: 0;
-	}
-	to {
-	  stroke-dashoffset: 30;
-	}
-}
-
-  @keyframes dash-small {
-	from {
-	  stroke-dashoffset: 0;
-	}
-	to {
-	  stroke-dashoffset: 21;
-	}
-}
-
-  @keyframes dash-small-second {
-	from {
-	  stroke-dashoffset: 0;
-	}
-	to {
-	  stroke-dashoffset: 19;
-	}
-}

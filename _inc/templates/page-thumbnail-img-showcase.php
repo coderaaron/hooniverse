@@ -42,25 +42,34 @@
 			echo '<span role="img" class="screen-reader-text" aria-label="' . esc_attr( $image_alt_text ) . '"></span>';
 		}
 
-		if ( have_rows( 'overlay_content' ) ) { ?>
-		<div class="feature-text-wrapper">
-		<div class="feature-text<?php echo $overlay_color; ?>">
-			<?php while ( have_rows( 'overlay_content' ) ) : the_row();
+		if ( have_rows( 'overlay_content' ) || get_field( 'show_page_title_in_showcase' ) ) {
+			?>
+		<div class="feature-text-wrapper<?php echo $overlay_color; ?>">
+		<div class="feature-text">
+			<?php
+			if ( get_field( 'show_page_title_in_showcase' ) ) {
+				?>
+				<h1 class="page-title"><?php the_title(); ?></h1>
+				<?php
+			}
+			while ( have_rows( 'overlay_content' ) ) {
+				the_row();
 
-				if ( get_row_layout() == 'heading' ) {
+				if ( get_row_layout() === 'heading' ) {
 
 					echo '<h2 class="heading">' . get_sub_field( 'heading' ) . '</h2>';
 
-				} elseif ( get_row_layout() == 'subheading' ) {
+				} elseif ( get_row_layout() === 'subheading' ) {
 
 					echo '<p class="subheading">' . get_sub_field( 'subheading' ) . '</p>';
 
-				} elseif ( get_row_layout() == 'button' ) {
+				} elseif ( get_row_layout() === 'button' ) {
 
 					echo '<a href="' . get_sub_field( 'url' ) . '" class="button-inverse">' . get_sub_field( 'text' ) . '</a>';
 
 				}
-			endwhile; ?>
+			};
+			?>
 		</div>
 		</div>
 		<?php } ?>

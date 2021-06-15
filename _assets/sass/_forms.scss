@@ -13,9 +13,9 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid $red;
+	border: 1px solid $tangerine;
 	border-radius: 6px;
-	background-color: $red;
+	background-color: $tangerine;
 	color: #fff;
 	font-family: $font-sans;
 	@include font-size( $size-0 );
@@ -26,8 +26,8 @@ input[type="submit"] {
 	.site-content & {
 		&:hover {
 			background-color: #fff;
-			border: 1px solid $red;
-			color: $red;
+			border: 1px solid $tangerine;
+			color: $tangerine;
 			text-decoration: none;
 		}
 
@@ -38,7 +38,7 @@ input[type="submit"] {
 			box-shadow: 0 0 0 0.2rem rgba(94, 158, 214, .7);
 
 			&:hover {
-				color: $red;
+				color: $tangerine;
 			}
 		}
 	}
@@ -237,8 +237,8 @@ button.frm-input-group-button {
 }
 
 .frm_error_style {
-	background-color: tint($red, 80%);
-	border: 1px solid tint($red, 50%);
+	background-color: tint($tangerine, 80%);
+	border: 1px solid tint($tangerine, 50%);
 	color: $color-text-dark;
 	@include font-size(1.2);
 	padding: 15px;
@@ -370,14 +370,14 @@ button.frm-input-group-button {
 .frm-star-group input + label:before,
 .frm-star-group .star-rating:before {
 	content:'\2606';
-	color: $red;
+	color: $tangerine;
 	display: inline-block;
 	vertical-align: top;
 }
 
 .frm-star-group input[type=radio]:checked + label:before,
 .frm-star-group:not(.frm-star-hovered) input[type=radio]:checked + label:before {
-	color: $red;
+	color: $tangerine;
 }
 
 .frm-star-group:not(.frm-star-hovered) input[type=radio]:checked + label:before,
@@ -386,7 +386,7 @@ button.frm-input-group-button {
 .frm-star-group .star-rating-on:before,
 .frm-star-group .star-rating-hover:before {
 	content:'\2605';
-	color: $red;
+	color: $tangerine;
 }
 
 .frm-star-group .star-rating-readonly {

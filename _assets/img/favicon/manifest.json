@@ -1,5 +1,5 @@
 {
-	"name": "WUSTL",
+	"name": "Hooniverse",
 	"icons": [
 		{
 			"src": "android-chrome-192x192.png?v=20160912",
@@ -12,5 +12,5 @@
 			"type": "image\/png"
 		}
 	],
-	"theme_color": "#a51417"
+	"theme_color": "#000000"
 }

@@ -2,6 +2,16 @@
  * Styles for the alternative (aka "Condensed") header.
  */
 .header-alt {
+	.logo-non-sticky {
+		animation: fadein 1s cubic-bezier(.2, 1, .3, 1);
+		margin: 15px 0;
+		width: 347px;
+		height: 68px;
+	};
+	.logo-sticky {
+		animation: fadein 1s cubic-bezier(.2, 1, .3, 1);
+		display: none;
+	}
 	&.has-featured-image {
 		.sticky-wrapper {
 			position: absolute;
@@ -10,23 +20,35 @@
 		}
 
 		.site-header {
-			background: rgba($gray-dark, 0.9);
+			background: rgba(black, 0.9);
 		}
 
 		.is-sticky .site-header {
-			background: $gray-dark;
+			background: black;
 		}
 	}
 
 	.sticky-wrapper {
 		position: relative;
 		z-index: 999;
-		background: $gray-dark;
+		background: black;
 	}
 
 	.is-sticky .site-header {
 		animation: slidedown 1s cubic-bezier(.2, 1, .3, 1);
 		min-height: 3.437rem;
+
+		.logo-non-sticky {
+			display: none;
+		}
+
+		.logo-sticky {
+			display: inline-block;
+			width: 55px;
+			height: 55px;
+			margin: 5px 0;
+		}
+
 
 		@media screen and (min-width: $break-menu) {
 			min-height: 0;
@@ -38,15 +60,15 @@
 
 		.hooniverse-main-menu-wrapper {
 			width: 100%;
-			margin-bottom: 0;
+			margin-bottom: auto;
 		}
 
 		.hooniverse-main-menu-content {
-			text-align: left;
+			text-align: right;
 		}
 
 		.hooniverse-main-menu-list {
-			text-align: left;
+			text-align: right;
 		}
 
 		.desktop-search-active .header-search {
@@ -65,7 +87,7 @@
 	}
 
 	.site-header {
-		background: $gray-dark;
+		background: black;
 		top: 0;
 		z-index: 999;
 		border-bottom: none;
@@ -107,9 +129,9 @@
 
 		@media screen and (min-width: $break-menu) {
 			height: 3.125rem;
-			width: 55%;
+			width: 75%;
 			margin-top: auto;
-			margin-bottom: 0.8em;
+			margin-bottom: auto;
 
 			.hooniverse-main-menu-content {
 				text-align: right;

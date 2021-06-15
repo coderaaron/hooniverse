@@ -45,7 +45,7 @@ function hooniverse_featured_image_toggle_metabox( $post ) {
 	?>
 	<div>
 		<label class="selectit">
-			<input type="checkbox" name="hooniverse-featured-image-toggle" id="hooniverse-featured-image-toggle" value="true" <?php if ( 'post-new.php' == $pagenow ) { echo 'checked="checked"'; } else { checked ( $checked, $current, $echo ); } ?> /> Show the featured image on the <a href="https://webtheme.wustl.edu/items/creating-a-news-post/" target="_blank">post detail page</a>.
+			<input type="checkbox" name="hooniverse-featured-image-toggle" id="hooniverse-featured-image-toggle" value="true" <?php if ( 'post-new.php' == $pagenow ) { echo 'checked="checked"'; } else { checked ( $checked, $current, $echo ); } ?> /> Show the featured image on the post detail page.
 		</label>
 	</div>
 	<?php

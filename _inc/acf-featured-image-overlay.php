@@ -24,6 +24,25 @@ acf_add_local_field_group( array(
 			'esc_html' => 0,
 		),
 		array(
+			'key' => 'field_60c8f58cf8759',
+			'label' => 'Show page title in Showcase',
+			'name' => 'show_page_title_in_showcase',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => '',
+			'default_value' => 1,
+			'ui' => 0,
+			'ui_on_text' => '',
+			'ui_off_text' => '',
+		),
+		array(
 			'key' => 'field_5b05cc8b68cf6',
 			'label' => 'Content',
 			'name' => 'overlay_content',
@@ -176,13 +195,13 @@ acf_add_local_field_group( array(
 		array(
 			array(
 				'param' => 'page_template',
-				'operator' => '==',
-				'value' => 'page-full.php',
+				'operator' => '!=',
+				'value' => 'page-sidebar.php',
 			),
 			array(
-				'param' => 'page_type',
+				'param' => 'post_type',
 				'operator' => '==',
-				'value' => 'front_page',
+				'value' => 'page',
 			),
 		),
 	),
