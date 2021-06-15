@@ -19,7 +19,7 @@ acf_add_local_field_group( array(
 				'class' => '',
 				'id' => '',
 			),
-			'message' => '<a href="https://webtheme.wustl.edu/items/using-the-homepage-spotlight-layout/">See Spotlight layout instructions »</a>',
+			'message' => '',
 			'new_lines' => '',
 			'esc_html' => 0,
 		),
