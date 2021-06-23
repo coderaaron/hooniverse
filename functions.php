@@ -288,3 +288,12 @@ function hooniverse_post_archive_ignore_menu_order( $query ) {
 	}
 }
 add_action( 'pre_get_posts', 'hooniverse_post_archive_ignore_menu_order' );
+
+function custom_admin_css() {
+	echo '<style type="text/css">
+	.editor-styles-wrapper .wp-block {
+		max-width: 1136px !important;
+	}
+	</style>';
+}
+add_action( 'admin_head', 'custom_admin_css' );
