@@ -1,6 +1,11 @@
 .wp-block-cover {
     margin-bottom: 1.5rem;
-    height: auto;
+    width: 100vw;
+	position: relative;
+	left: 50%;
+	right: 50%;
+	margin: 0 -50vw 3rem;
+	min-height: 200px;
 
     &.has-background-dim {
         &::before {
@@ -10,7 +15,7 @@
 
     .wp-block-cover__inner-container {
         color: #fff;
-        text-shadow: 0 0 10px rgba(0,0,0,0.35);
+        /* text-shadow: 0 0 10px rgba(0,0,0,0.35); */
 
         > p,
         .wp-block-paragraph {
@@ -35,7 +40,7 @@
 
         .has-large-font-size {
             font-size: 1.5625rem;
-            margin: 0 0 0.5em;
+            margin: 0;
             line-height: 1.25;
 
             @media screen and (min-width: $break-zoom) {

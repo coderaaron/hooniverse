@@ -10,15 +10,16 @@
 	text-decoration: none;
 	padding: 0.5em 1.25em;
 	margin: 0 0 1em;
-	border: 1px solid $red;
+	border: 1px solid black;
 	border-radius: 6px;
-	background-color: $red;
+	background-color: black;
 	text-align: center;
+	transition: all 0.2s;
 
 	&:hover {
 		background-color: #fff;
-		border: 1px solid $red;
-		color: $red;
+		border: 1px solid black;
+		color: black;
 		text-decoration: none;
 	}
 
@@ -27,7 +28,7 @@
 		text-decoration: none;
 
 		&:hover {
-			color: $red;
+			color: black;
 		}
 	}
 
@@ -64,17 +65,17 @@
 .wp-block-button.is-style-outline .wp-block-button__link {
 	@extend .button-primary;
 	background-color: transparent;
-	border: 1px solid $red;
-	color: $red;
+	border: 1px solid black;
+	color: black;
 
 	&:focus {
-		color: $red;
+		color: black;
 	}
 
 	&:hover,
 	&:hover:focus,
 	&:active {
-		background: $red;
+		background: black;
 		color: #fff;
 	}
 }
@@ -83,7 +84,7 @@
 	display: inline-block;
 	cursor: pointer;
 	font-family: $font-sans;
-	color: $red;
+	color: black;
 	@include font-size( $size-0 );
 	font-weight: 400;
 	line-height: 1.1em;
