@@ -29,10 +29,6 @@
 		}
 	}
 
-	.current-page {
-		text-decoration: underline;
-	}
-
 	@media screen and (min-width: $break-menu) {
 		float: none;
 		text-align: center;
@@ -278,6 +274,10 @@
 
 			a {
 				color: #fff;
+				&.current-page {
+					color: $tangerine;
+					text-decoration: underline;
+				}
 			}
 
 			> li.main-links,
