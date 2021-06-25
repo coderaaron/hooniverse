@@ -12,7 +12,7 @@
 		&.menu-item-link {
 			&:hover,
 			&:focus {
-				color: $tangerine;
+				color: $yellowish;
 				text-decoration: underline;
 			}
 		}
@@ -102,7 +102,7 @@
 					position: absolute;
 					top: 0;
 					right: 0;
-					background: $tangerine;
+					background: $yellowish;
 					border: 0;
 					border-radius: 0;
 					height: 42px;
@@ -260,7 +260,7 @@
 				}
 
 				&:hover {
-					background: $tangerine;
+					background: $yellowish;
 				}
 			}
 		}
@@ -275,7 +275,7 @@
 			a {
 				color: #fff;
 				&.current-page {
-					color: $tangerine;
+					color: $yellowish;
 					text-decoration: underline;
 				}
 			}
