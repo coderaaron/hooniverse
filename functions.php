@@ -197,6 +197,7 @@ function hooniverse_scripts() {
 
 	// Base Hooniverse style + script.
 	wp_enqueue_style( 'hooniverse-style', get_stylesheet_uri(), array(), $this_version );
+	wp_enqueue_style( 'hooniverse-fonts', 'https://use.typekit.net/upb4tol.css', array(), $this_version );
 	wp_enqueue_script( 'hooniverse-scripts', get_template_directory_uri() . '/_assets/js/scripts.js', array( 'jquery' ), $this_version, true );
 
 	wp_add_inline_script( 'hooniverse-scripts', 'var ajaxurl = "' . admin_url( 'admin-ajax.php' ) . '";', 'before' );

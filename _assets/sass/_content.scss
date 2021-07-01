@@ -278,17 +278,18 @@
 }
 
 .page-title {
-	@include font-size(2.19);
+	font-family: $font-header;
+	@include font-size(6);
 	font-weight: 300;
-	margin: 0 0 0.5em;
+	margin: 0;
 
 	@media screen and (min-width: $break-zoom) {
-		@include font-size(2.5);
-		margin: 0 0 0.8em;
+		@include font-size(8);
+		margin: 0;
 	}
 
 	@media screen and (min-width: $break-md) {
-		@include font-size(2.75);
+		@include font-size(10);
 	}
 }
 
