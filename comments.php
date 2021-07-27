@@ -20,10 +20,13 @@ if ( post_password_required() ) {
 
 <div id="comments" class="comments-area">
 	<?php if ( have_comments() ) : ?>
-		<h2 class="comments-title"><?php
-			printf( _nx( 'One Comment', '%1$s Comments', get_comments_number(), 'comments title', 'hooniverse' ),
-				number_format_i18n( get_comments_number() ) );
-		?></h2>
+		<div class="title-bar comments-title">
+			<h4 class="comments-title"><?php
+				printf( _nx( 'One Comment', '%1$s Comments', get_comments_number(), 'comments title', 'hooniverse' ),
+					number_format_i18n( get_comments_number() ) );
+			?></h4>
+			<div class="title-sep-container"></div>
+		</div>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-above" class="comment-navigation" role="navigation">

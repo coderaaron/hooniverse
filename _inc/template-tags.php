@@ -8,17 +8,17 @@
  */
 
 if ( ! function_exists( 'hooniverse_paging_nav' ) ) :
-/**
- * Display navigation to next/previous set of posts when applicable.
- *
- * @return void
- */
-function hooniverse_paging_nav() {
-	// Don't print empty markup if there's only one page.
-	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
-		return;
-	}
-	?>
+	/**
+	 * Display navigation to next/previous set of posts when applicable.
+	 *
+	 * @return void
+	 */
+	function hooniverse_paging_nav() {
+		// Don't print empty markup if there's only one page.
+		if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
+			return;
+		}
+		?>
 	<nav class="paging-navigation" role="navigation">
 		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'hooniverse' ); ?></h1>
 		<div class="nav-links">
@@ -30,15 +30,15 @@ function hooniverse_paging_nav() {
 			<?php
 				global $wp_query;
 				$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-				if ( $paged ) {
-					$max_pages = $wp_query->max_num_pages;
+			if ( $paged ) {
+				$max_pages = $wp_query->max_num_pages;
 
-					echo '<div class="nav-count">';
-					echo '<span class="current-page">' . $paged . '</span>';
-					echo ' <span class="of">of</span> ';
-					echo '<span class="max-page">' . $max_pages . '</span>';
-					echo '</div>';
-				}
+				echo '<div class="nav-count">';
+				echo '<span class="current-page">' . $paged . '</span>';
+				echo ' <span class="of">of</span> ';
+				echo '<span class="max-page">' . $max_pages . '</span>';
+				echo '</div>';
+			}
 			?>
 
 			<?php if ( get_next_posts_link() ) : ?>
@@ -47,62 +47,71 @@ function hooniverse_paging_nav() {
 
 		</div><!-- .nav-links -->
 	</nav><!-- .paging-navigation -->
-	<?php
-}
+		<?php
+	}
 endif;
 
 if ( ! function_exists( 'hooniverse_posted_on' ) ) :
-/**
- * Prints HTML with meta information for the current post-date/time and author.
- */
-function hooniverse_posted_on() {
-	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
-	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
-	}
+	/**
+	 * Prints HTML with meta information for the current post-date/time and author.
+	 */
+	function hooniverse_posted_on() {
+		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+			$time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
+		}
 
-	$time_string = sprintf( $time_string,
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_attr( get_the_modified_date( 'c' ) ),
-		esc_html( get_the_modified_date() )
-	);
-
-	/* $time_string is escaped above and does not need to be escaped after this point */
-	if ( is_archive() ) {
-		printf( __( '<span class="posted-on">%1$s</span>', 'hooniverse' ),
-			$time_string
+		$time_string = sprintf(
+			$time_string,
+			esc_attr( get_the_date( 'c' ) ),
+			esc_html( get_the_date() ),
+			esc_attr( get_the_modified_date( 'c' ) ),
+			esc_html( get_the_modified_date() )
 		);
-	} else if ( get_field( 'hooniverse_external_url' ) ) {
-		if ( get_field( 'hooniverse_source_name' ) ) {
-			printf( __( '<span class="byline">%1$s</span> &bull; <span class="posted-on">%2$s</span>', 'hooniverse' ),
-				sprintf( '<span class="author">%1$s</span>',
-					esc_html( the_field( 'hooniverse_source_name' ) )
+
+		/* $time_string is escaped above and does not need to be escaped after this point */
+		if ( is_archive() ) {
+			printf(
+				__( '<span class="posted-on">%1$s</span>', 'hooniverse' ),
+				$time_string
+			);
+		} elseif ( get_field( 'hooniverse_external_url' ) ) {
+			if ( get_field( 'hooniverse_source_name' ) ) {
+				printf(
+					__( '<span class="byline">%1$s</span> | <span class="posted-on">%2$s</span>  | ', 'hooniverse' ),
+					sprintf(
+						'<span class="author">%1$s</span>',
+						esc_html( the_field( 'hooniverse_source_name' ) )
+					),
+					$time_string
+				);
+			} else {
+				printf(
+					__( '<span class="posted-on">%1$s</span>', 'hooniverse' ),
+					$time_string
+				);
+			}
+		} elseif ( function_exists( 'coauthors_posts_links' ) ) {
+			printf(
+				__( '<span class="byline">By %1$s</span> | <span class="posted-on">%2$s</span>  | ', 'hooniverse' ),
+				sprintf(
+					'<span class="author vcard">%1$s</span>',
+					coauthors_posts_links( null, null, null, null, false )
 				),
 				$time_string
 			);
 		} else {
-			printf( __( '<span class="posted-on">%1$s</span>', 'hooniverse' ),
+			printf(
+				__( '<span class="byline">By %1$s</span> | <span class="posted-on">%2$s</span>  | ', 'hooniverse' ),
+				sprintf(
+					'<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
+					esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+					esc_html( get_the_author() )
+				),
 				$time_string
 			);
 		}
-	} else if ( function_exists( 'coauthors_posts_links' ) ) {
-		printf( __( '<span class="byline">By %1$s</span> &bull; <span class="posted-on">%2$s</span>', 'hooniverse' ),
-			sprintf( '<span class="author vcard">%1$s</span>',
-				coauthors_posts_links( null, null, null, null, false )
-			),
-			$time_string
-		);
-	} else {
-		printf( __( '<span class="byline">By %1$s</span> &bull; <span class="posted-on">%2$s</span>', 'hooniverse' ),
-			sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
-				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-				esc_html( get_the_author() )
-			),
-			$time_string
-		);
 	}
-}
 endif;
 
 /**
@@ -110,25 +119,27 @@ endif;
  */
 function hooniverse_list_categories( $post_id ) {
 	// Get list of categories associated with post
-	$post_terms = wp_get_object_terms( $post_id, 'category', array( 'fields' => 'ids' ) );
+	$post_terms    = wp_get_object_terms( $post_id, 'category', array( 'fields' => 'ids' ) );
 	$uncategorized = get_cat_ID( 'Uncategorized' );
 
 	// Remove uncategorized ID from list of categories
 	if ( in_array( $uncategorized, $post_terms ) ) {
 		$exclude = array_search( $uncategorized, $post_terms );
-		unset( $post_terms[$exclude] );
+		unset( $post_terms[ $exclude ] );
 	}
 
 	if ( ! empty( $post_terms ) && ! is_wp_error( $post_terms ) ) {
-		$categories = wp_list_categories( array(
-			'include' => $post_terms,
-			'title_li' => '',
-			'show_option_none' => '',
-			'style' => 'none',
-			'echo' => false,
-		) );
+		$categories = wp_list_categories(
+			array(
+				'include'          => $post_terms,
+				'title_li'         => '',
+				'show_option_none' => '',
+				'style'            => 'none',
+				'echo'             => false,
+			)
+		);
 
-		$categories = trim( str_replace( '<br />',  '', $categories ) );
+		$categories = trim( str_replace( '<br />', '', $categories ) );
 
 		return $categories;
 	}
@@ -143,13 +154,15 @@ function hooniverse_get_sidebar_nav() {
 	$sidebar = false;
 
 	if ( is_page() ) {
-		$walker = new Razorback_Walker_Page_Selective_Children();
-		$sidebar = wp_list_pages( array(
-			'title_li' => '',
-			'walker'   => $walker,
-			'depth'    => 3,
-			'echo'     => 0,
-		) );
+		$walker  = new Razorback_Walker_Page_Selective_Children();
+		$sidebar = wp_list_pages(
+			array(
+				'title_li' => '',
+				'walker'   => $walker,
+				'depth'    => 3,
+				'echo'     => 0,
+			)
+		);
 
 		if ( $sidebar ) {
 			$sidebar = '<ul class="subnav">' . $sidebar . '</ul>';
