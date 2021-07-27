@@ -7,7 +7,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class() ?>>
 	<?php
 	// Feature image if there's a thumbnail and the toggle is on.
-	if ( has_post_thumbnail() && ( get_post_meta( $post->ID, '_hooniverse_featured_image_toggle', true ) == 'true' ) ) {
+	if ( has_post_thumbnail() ) {
 		get_template_part( '_inc/templates/post-thumbnail-img' );
 	}
 	?>
