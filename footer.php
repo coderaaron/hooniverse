@@ -22,7 +22,7 @@
 		</div><!-- .container -->
 		<div class="site-info">
 			<p class="footer-copyright">
-				&copy; <?php echo date("Y") ?> Hooniverse <em>[Founded in 2009]</em><br/>
+				&copy; <?php echo gmdate( 'Y' ); ?> Hooniverse <em>[Founded in 2009]</em><br/>
 				Hooniverse is a trademark of Hoonigan used with permission
 			</p>
 		</div><!-- .site-info -->
