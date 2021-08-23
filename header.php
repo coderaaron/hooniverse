@@ -35,7 +35,7 @@
 	?>
 
 	<div id="page" class="hfeed site header-alt<?php echo $has_featured_image; ?>">
-		<header class="site-header" role="banner">
+		<div class="site-header" role="banner">
 			<div class="container">
 				<a class="logo-non-sticky" href="<?php echo esc_url(home_url('/')); ?>" rel="home"><img src="<?php echo get_template_directory_uri(); ?>/_assets/img/hooniverse-logo.png" width="347" height="68" alt=""></a>
 				<a class="logo-sticky" href="<?php echo esc_url(home_url('/')); ?>" rel="home"><img src="<?php echo get_template_directory_uri(); ?>/_assets/img/logo-sticky.png" width="55" height="55" alt=""></a>
@@ -47,4 +47,5 @@
 
 				<?php get_template_part('_inc/templates/main-menu'); ?>
 			</div>
-		</header>
+	</div>
+	<header></header>
