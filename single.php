@@ -5,7 +5,13 @@
  * @package Hooniverse
  */
 
-get_header(); ?>
+get_header();
+
+// Feature image if there's a thumbnail and the toggle is on.
+if ( 0 !== get_post_thumbnail_id() ) {
+	get_template_part( '_inc/templates/page-thumbnail-img-showcase' );
+}
+?>
 
 <div id="content" class="site-content">
 	<main id="primary" class="content-area" role="main">
