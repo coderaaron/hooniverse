@@ -7,9 +7,9 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class() ?>>
 	<?php
 	// Feature image if there's a thumbnail and the toggle is on.
-	if ( has_post_thumbnail() ) {
+	/* if ( has_post_thumbnail() ) {
 		get_template_part( '_inc/templates/post-thumbnail-img' );
-	}
+	} */
 	?>
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
