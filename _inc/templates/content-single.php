@@ -70,7 +70,7 @@
 		<div class="author-info">
 			<?php
 			echo get_avatar( get_the_author_meta( 'ID' ) );
-			the_author_meta( 'description' );
+			echo '<p>' . get_the_author_meta( 'description' ) . '</p>';
 			$tag_list = get_the_tag_list();
 
 			// If there are tags associated with this content, print them out
@@ -85,6 +85,10 @@
 				$tag_list
 			);
 			?>
+		</div>
+
+		<div class="title-bar">
+			<div class="title-sep-container"></div>
 		</div>
 
 		<?php
