@@ -21,10 +21,10 @@
 	padding: 0;
 
 	> .comment {
-		border-top: 1px solid $gray-extra-light;
+		border-bottom: 1px solid $gray-extra-light;
 
 		&:last-child {
-			border-bottom: 1px solid $gray-extra-light;
+			border-bottom: none;
 		}
 	}
 
