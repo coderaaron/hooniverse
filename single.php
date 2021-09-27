@@ -9,7 +9,7 @@ get_header();
 
 // Feature image if there's a thumbnail and the toggle is on.
 if ( 0 !== get_post_thumbnail_id() ) {
-	get_template_part( '_inc/templates/page-thumbnail-img-showcase' );
+	get_template_part( '_inc/templates/post-thumbnail-img' );
 }
 ?>
 
