@@ -1,5 +1,5 @@
 <?php
-	$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
+	$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'featured-img-hero' );
 ?>
 
 <figure class="post-thumbnail-feature">
