@@ -157,6 +157,7 @@
 
 .post-thumbnail-feature img {
 	display: block;
+	margin: 0 auto;
 }
 
 .page-thumbnail-feature {
@@ -184,7 +185,7 @@
 
 	/* For screens at 1520px wide and above... */
 	@media screen and (min-width: $break-xl) {
-		height: 550px;
+		height: 1080px;
 	}
 
 	.home .header-alt & {
