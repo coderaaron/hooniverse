@@ -179,10 +179,10 @@ add_image_size( 'featured-img-page-1_5x', 2160, 825, true );
 add_image_size( 'featured-img-page-2x', 2880, 1100, true );
 
 // Add image sizes for showcase
-add_image_size( 'featured-img-hero-sm', 960 );
-add_image_size( 'featured-img-hero', 1920 );
-add_image_size( 'featured-img-hero-1_5x', 2880 );
-add_image_size( 'featured-img-hero-2x', 3820 );
+add_image_size( 'featured-img-hero-sm', 960, 540 );
+add_image_size( 'featured-img-hero', 1920, 1080 );
+add_image_size( 'featured-img-hero-1_5x', 2880, 1620 );
+add_image_size( 'featured-img-hero-2x', 3840, 2160 );
 
 // Disable image size upper limit of 2560px
 add_filter( 'big_image_size_threshold', '__return_false' );
