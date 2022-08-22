@@ -28,6 +28,22 @@ footer {
 	color: white;
 }
 
+header {
+	position: fixed;
+	left: 0;
+	right: 0;
+	z-index: 10;
+}
+
+main {
+	padding-top: 100px;
+	scroll-padding-top: 100px;
+}
+
 .colophon {
 	border-top: 1px solid #c8c8c8;
+}
+
+.wp-site-blocks > * + * {
+    margin-block-start: 0;
 }
