@@ -35,7 +35,8 @@ header {
 	z-index: 10;
 }
 
-main {
+.wp-block-post-featured-image,
+.home main {
 	padding-top: 100px;
 	scroll-padding-top: 100px;
 }
@@ -46,4 +47,8 @@ main {
 
 .wp-site-blocks > * + * {
     margin-block-start: 0;
+}
+
+h4 a {
+	font-family: 'Bai Jamjuree', sans-serif;
 }
