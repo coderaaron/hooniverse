@@ -42,6 +42,11 @@ header {
 	scroll-padding-top: 100px;
 }
 
+header + h1 {
+	padding-top: 120px;
+	scroll-padding-top: 120px;
+}
+
 .colophon {
 	margin: 0;
 	border-top: 1px solid #c8c8c8;
