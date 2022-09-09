@@ -84,7 +84,6 @@
 							"fontStyle": "normal",
 							"fontWeight": "400",
 							"src": "file:./assets/fonts/monster-mash/CCMonsterMash.ttf"
-
 						}
 					],
 					"fontFamily": "\"Monster Mash\", serif",
@@ -114,10 +113,13 @@
 				}
 			}
 		},
+		"color": {
+			"text": "#3d3d3d"
+		},
 		"elements": {
 			"h1": {
 				"typography": {
-					"fontFamily": "\"Bai Jamjuree\", sans-serif",
+					"fontFamily": "\"Monster Mash\", serif",
 					"fontSize": "10rem"
 				}
 			},
@@ -133,7 +135,9 @@
 			}
 		},
 		"typography": {
-			"fontFamily": "var:preset|font-family|bai-jamjuree"
+			"fontFamily": "var:preset|font-family|bai-jamjuree",
+			"fontSize": "1.2rem",
+			"lineHeight": "1.5"
 		}
 	},
 	"templateParts": [

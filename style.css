@@ -63,3 +63,25 @@ div.wp-block-search__inside-wrapper {
 	border: none;
 	padding: 0;
 }
+
+.hooniverse-main-menu {
+	text-transform: uppercase;
+}
+
+button.wp-block-search__button.has-icon {
+	padding: calc(0.667em + 2px) calc(0.667em + 2px);
+}
+
+.search-form {
+	padding-top: 20px;
+}
+
+.search-hidden {
+	height: 0;
+	visibility: hidden;
+}
+
+.dashicons-search {
+	font-size: 2rem;
+	cursor: pointer;
+}
