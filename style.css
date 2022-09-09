@@ -42,6 +42,7 @@ header {
 }
 
 .colophon {
+	margin: 0;
 	border-top: 1px solid #c8c8c8;
 }
 
@@ -51,4 +52,9 @@ header {
 
 h4 a {
 	font-family: 'Bai Jamjuree', sans-serif;
+}
+
+div.wp-block-search__inside-wrapper {
+	border: none;
+	padding: 0;
 }
