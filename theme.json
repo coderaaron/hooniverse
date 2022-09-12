@@ -117,10 +117,15 @@
 			"text": "#3d3d3d"
 		},
 		"elements": {
+			"caption": {
+				"typography": {
+					"fontSize": "1rem"
+				}
+			},
 			"h1": {
 				"typography": {
 					"fontFamily": "\"Monster Mash\", serif",
-					"fontSize": "10rem"
+					"fontSize": "2.197rem"
 				}
 			},
 			"h2": {
@@ -129,8 +134,13 @@
 				}
 			},
 			"link": {
+				":hover": {
+					"color": {
+						"text": "#fcb900"
+					}
+				},
 				"color": {
-					"text": "#000000"
+					"text": "#ffa500"
 				}
 			}
 		},
