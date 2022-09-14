@@ -22,29 +22,29 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 font: "Carter One", cursive;
 font: ccmonstermash, sans-serif; */
 
+.admin-bar header {
+	margin-top: 32px;
+}
+
+body {
+	margin-top: 106px;
+}
+
+header {
+	z-index: 999;
+	margin: 0 auto;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+
+}
+
 header,
 footer {
 	background-color: black;
 	color: white;
-}
-
-header {
-	position: fixed;
-	left: 0;
-	right: 0;
-	z-index: 10;
-}
-
-.wp-block-post-featured-image,
-.post-title-hero-cover,
-.home main {
-	padding-top: 100px;
-	scroll-padding-top: 100px;
-}
-
-header + h1 {
-	padding-top: 120px;
-	scroll-padding-top: 120px;
 }
 
 .colophon {
@@ -52,8 +52,8 @@ header + h1 {
 	border-top: 1px solid #c8c8c8;
 }
 
-.wp-site-blocks > * + * {
-    margin-block-start: 0;
+.wp-site-blocks>*+* {
+	margin-block-start: 0;
 }
 
 h1 {
@@ -64,29 +64,33 @@ h4 a {
 	font-family: 'Bai Jamjuree', sans-serif;
 }
 
-div.wp-block-search__inside-wrapper {
-	border: none;
-	padding: 0;
-}
-
 .hooniverse-main-menu {
 	text-transform: uppercase;
 }
 
-button.wp-block-search__button.has-icon {
-	padding: calc(0.667em + 2px) calc(0.667em + 2px);
-}
-
-.search-form {
-	padding-top: 20px;
-}
-
-.search-hidden {
-	height: 0;
-	visibility: hidden;
-}
-
-.dashicons-search {
+nav .dashicons {
 	font-size: 2rem;
 	cursor: pointer;
+}
+
+nav form.wp-block-search {
+	opacity: 1;
+	visibility: visible;
+	left: 0;
+	right: 40px;
+	position: absolute;
+	z-index: 1;
+	background-color: black;
+	transition: 600ms;
+}
+
+nav form.wp-block-search.search-hidden {
+	opacity: 0;
+	visibility: hidden;
+	transition: 600ms;
+}
+
+.post-title-hero-cover h1 {
+	font-size: 10rem;
+	letter-spacing: 10px;
 }
