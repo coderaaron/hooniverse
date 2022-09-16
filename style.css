@@ -41,6 +41,12 @@ header {
 
 }
 
+header .wp-block-navigation .wp-block-navigation-item.dashicons:hover,
+header .wp-block-navigation__responsive-container .wp-block-navigation-link a:hover {
+	color: #fcb900;
+	transition: 200ms;
+}
+
 header,
 footer {
 	background-color: black;
