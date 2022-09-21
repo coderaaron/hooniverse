@@ -13,3 +13,9 @@ function hooniverse_scripts() {
 	wp_enqueue_script( 'hooniverse-js', get_stylesheet_directory_uri() . '/script.js', array(), $this_version, true );
 }
 add_action( 'wp_enqueue_scripts', 'hooniverse_scripts' );
+
+function adsense_code() { ?>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1827813988014570" crossorigin="anonymous"></script>
+	<?php
+}
+add_action( 'wp_head', 'adsense_code' );
