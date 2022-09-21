@@ -19,3 +19,8 @@ function adsense_code() { ?>
 	<?php
 }
 add_action( 'wp_head', 'adsense_code' );
+
+// 2x medium_large size.
+remove_image_size( '1536x1536', 1536, 1536 );
+// 2x large size.
+remove_image_size( '2048x2048', 2048, 2048 );
