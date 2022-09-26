@@ -169,3 +169,20 @@ div.article-footer-bio {
 .article-footer-bio .wp-block-post-author__name {
 	display: none;
 }
+
+@media (max-width:600px) {
+	.wp-block-navigation-item.dashicons.wp-block-navigation-link.dashicons-search {
+		display: none
+	}
+
+	nav form.wp-block-search.search-hidden {
+		visibility: visible;
+		opacity: 1;
+		width: 100%;
+	}
+
+	header,
+	nav form.wp-block-search {
+		position: revert;
+	}
+}
